@@ -81,3 +81,10 @@ main{background:none}
 .cc-node{border-width:4px}
 /* أزرار التحكم في القفز والعربيات */
 .steer{border:3px solid rgba(0,0,0,.35);text-shadow:0 2px 0 rgba(0,0,0,.3)}
+/* العربيات: ٣ أزرار (شمال - بنزين - يمين) وعدّاد سرعة */
+.race-ctrl.tr3{grid-template-columns:1fr .9fr 1fr}
+.steer.gas{background:linear-gradient(180deg,#FFB36B,#F2760F);box-shadow:0 6px 0 #B25200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;color:#fff;font-weight:800}
+.steer.gas .ge{font-size:1.7rem;line-height:1}.steer.gas small{font-size:.85rem}
+.steer.down{transform:translateY(4px);filter:brightness(1.08)}
+#raceWrap .hud .spd{display:flex;align-items:baseline;gap:4px;background:rgba(10,12,30,.6);color:#fff;border-radius:999px;padding:2px 12px;font-weight:800}
+#raceWrap .hud .spd b{font-size:1.25rem;color:#7CFFB2;min-width:2.2em;text-align:center}#raceWrap .hud .spd small{font-size:.7rem;opacity:.85}

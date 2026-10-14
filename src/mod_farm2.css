@@ -173,6 +173,14 @@
 @keyframes fmPath{from{offset-distance:0%}to{offset-distance:100%}}
 @keyframes fmFlip2{0%{transform:scaleX(-1)}50%{transform:scaleX(1)}}
 @keyframes fmStep{from{transform:translateY(0) rotate(-2deg)}to{transform:translateY(-3px) rotate(2deg)}}
+#fmWorld .fm-plot{pointer-events:none}
+.fm-hitl{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+#fmWorld .fm-plot .fm-hit{pointer-events:all;cursor:pointer}
+#fmWorld .fm-plot .fm-bub{pointer-events:auto}
+#fmWorld .fm-b{pointer-events:none}
+#fmWorld .fm-b .fm-svg *{pointer-events:visiblePainted}
+#fmWorld .fm-b .fm-svg [fill^="rgba(0,0,0"]{pointer-events:none}
+#fmWorld .fm-b .fm-lab,#fmWorld .fm-b .fm-bub,#fmWorld .fm-b .fm-sign,#fmWorld .fm-b .fm-ghost,#fmWorld .fm-b .fm-tm{pointer-events:auto}
 /* فقاعات */
 .fm-bub{position:absolute;top:-10%;left:50%;transform:translate(-50%,-50%);min-width:1.9em;height:1.9em;padding:0 .2em;display:grid;place-items:center;font-size:calc(var(--u)*6);background:#fff;border-radius:1em;box-shadow:0 4px 10px rgba(0,0,0,.25);z-index:3}
 .fm-bub::after{content:'';position:absolute;bottom:-.3em;left:50%;margin-left:-.3em;border:.3em solid transparent;border-top-color:#fff;border-bottom:0}

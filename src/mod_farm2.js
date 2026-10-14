@@ -39,7 +39,7 @@ const FBLD={
  juice:{n:'مصنع العصير',e:'🏭',lv:6,c:260,type:'fac',in:{straw:2},out:'juice',t:80},
  cake:{n:'محل الكيك',e:'🧁',lv:8,c:380,type:'fac',in:{egg:2,milk:1,straw:1},out:'cake',t:120},
  bees:{n:'خلية النحل',e:'🐝',lv:10,c:450,type:'pen',an:'🐝',feed:'sun',out:'honey',t:110,ac:80,max:3}};
-const FITEM=k=>FCROP[k]||FPROD[k];
+const FITEM=k=>FCROP[k]||FPROD[k]||{n:String(k),e:'📦',s:1,x:0};
 const FMAXLV=15, FPLOT_MAX=12, fNeed=l=>12+l*10;
 const FCUST=['👵','👴','🧑‍🌾','👩‍🍳','👦','👧','🧕','👨‍🍳'];
 let F=null, FSEL='wheat', FT=0, FW=360;
@@ -51,6 +51,16 @@ function fLoad(){
   for(const k in F.bld){const b=FBLD[k];if(!b){delete F.bld[k];continue}const o=F.bld[k];
     if(b.type==='pen'&&!o.a){o.a=[{t0:o.t0||0},{t0:0}];delete o.t0}
     if(b.type==='fac'&&o.t0===undefined)o.t0=0}
+  // تنظيف الحفظ: أي حاجة مش معروفة (من نسخة تانية أو قديمة) بتتشال عشان المخزن والطلبات يفتحوا
+  const known=k=>!!(FCROP[k]||FPROD[k]);
+  F.coins=Math.max(0,+F.coins||0);F.xp=Math.max(0,+F.xp||0);F.lvl=Math.min(FMAXLV,Math.max(1,Math.floor(+F.lvl||1)));F.done=+F.done||0;
+  for(const k in F.inv){const q=Math.floor(+F.inv[k]||0);if(!known(k)||q<=0)delete F.inv[k];else F.inv[k]=q}
+  if(!Array.isArray(F.plots)||!F.plots.length)F.plots=Array.from({length:6},()=>({c:null,t0:0,w:0}));
+  F.plots=F.plots.slice(0,FPLOT_MAX).map(q=>q&&FCROP[q.c]?{c:q.c,t0:+q.t0||0,w:q.w?1:0}:{c:null,t0:0,w:0});
+  if(!Array.isArray(F.deco))F.deco=[];F.deco=F.deco.filter(k=>FDECO[k]);
+  if(!Array.isArray(F.tasks))F.tasks=[];
+  F.tasks=F.tasks.filter(t=>t&&t.need&&typeof t.need==='object'&&Object.keys(t.need).length&&Object.keys(t.need).every(known)).slice(0,3);
+  for(const k in F.bld){const o=F.bld[k];if(FBLD[k].type==='pen'){if(!Array.isArray(o.a)||!o.a.length)o.a=[{t0:0}];o.a=o.a.slice(0,FBLD[k].max).map(a=>({t0:+(a&&a.t0)||0}))}else o.t0=+o.t0||0}
   while(F.tasks.length<3)F.tasks.push(fNewTask());
 }
 function fSave(){pset('farm',F)}
@@ -250,8 +260,8 @@ function fDraw(){
   // الأرض الزراعية
   const pw=FM_PHW*2,ph=pw*170/200;
   for(let i=0;i<FPLOT_MAX;i++){const[cx,cy]=fPlotXY(i),st=`left:${fx(cx-FM_PHW)};top:${fx(cy-FM_PHH-pw*.3)};width:${fx(pw)};height:${fx(ph)};z-index:${fz(cy)}`;
-    if(i<F.plots.length){const p=F.plots[i];h+=`<button class="fm-plot" data-i="${i}" ${fPlotInner(p)} style="${st}">${fPlotSvg(p)}${fPlotBody(p)}</button>`}
-    else if(i===F.plots.length)h+=`<button class="fm-plot buy" id="fmBuyPlot" style="${st}">${fSoil('buy')}<i class="fm-buyt"><b>🚧</b>أرض جديدة<br>🪙 ${arDigits(fPlotCost())}</i></button>`;
+    if(i<F.plots.length){const p=F.plots[i];h+=`<button class="fm-plot" data-i="${i}" ${fPlotInner(p)} style="${st}">${fPlotSvg(p)}${fPlotBody(p)}${FM_HIT}</button>`}
+    else if(i===F.plots.length)h+=`<button class="fm-plot buy" id="fmBuyPlot" style="${st}">${FM_HIT}${fSoil('buy')}<i class="fm-buyt"><b>🚧</b>أرض جديدة<br>🪙 ${arDigits(fPlotCost())}</i></button>`;
     else h+=`<span class="fm-plot wild" style="${st}">${fSoil('wild')}</span>`}
   // الحظاير
   for(const k in FM_PEN){const [cx,cy]=FM_PEN[k],b=FBLD[k],own=F.bld[k];
@@ -308,6 +318,8 @@ function fPenSvg(k,own,front){
   s+=`<path d="M128 70L148 60 156 64 136 74Z" fill="#7A4A22"/><path d="M130 70L148 61 154 64 136 73Z" fill="${k==='coop'?'#E9C46A':k==='bees'?'#7FD3F7':'#9ED36A'}"/>`;
   return s+edge([0,50],[100,0],0)+edge([100,0],[200,50],0)+`</svg>`}
 // ---- قطعة الأرض: معيّن طين بخطوط ----
+// منطقة اللمس على شكل المعيّن بس، عشان القطع اللي جنب بعض ماتغطّيش على بعض
+const FM_HIT=`<svg class="fm-hitl" viewBox="0 -60 200 170"><path class="fm-hit" d="M100 -8L204 46 100 104 -4 46Z" fill="transparent"/></svg>`;
 function fSoil(kind){
   if(kind==='buy')return`<svg class="fm-soil" viewBox="0 -60 200 170"><path d="M100 2L198 50 100 98 2 50Z" fill="rgba(255,255,255,.28)" stroke="#fff" stroke-width="3" stroke-dasharray="9 7"/></svg>`;
   if(kind==='wild')return`<svg class="fm-soil" viewBox="0 -60 200 170"><path d="M100 4L196 50 100 96 4 50Z" fill="#79B955" opacity=".55"/>${[[70,46],[120,40],[100,64],[140,56],[60,60]].map(([x,y])=>`<path d="M${x} ${y}l-5 -12M${x} ${y}l0 -15M${x} ${y}l5 -12" stroke="#4E9E36" stroke-width="3" stroke-linecap="round"/>`).join('')}</svg>`;
