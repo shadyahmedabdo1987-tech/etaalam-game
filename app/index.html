@@ -680,16 +680,12 @@ html.girl .c-sky{--c:#C86BFA;--cd:#9440D0;--cl:#E2A8FF}html.girl .c-coral{--c:#F
 .ch-note{text-align:center;color:var(--muted);font-weight:700;font-size:.9rem;margin:10px 0 0}
 .ch-btns{display:flex!important;max-width:440px}.ch-btns .btn2{font-size:1rem;padding:10px 12px}
 
+
 /* ---------- المزرعة السعيدة ---------- */
-.fm-hud{position:relative;display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%}
-.fm-saved{position:absolute;top:-8px;left:50%;transform:translateX(-50%);pointer-events:none;font-size:.8rem;font-weight:800;color:#148A55;background:#E8FBE0;border-radius:999px;padding:3px 9px;opacity:0;transition:opacity .4s}
-.fm-saved.on{animation:fmSv 1.6s ease}
-@keyframes fmSv{0%,70%{opacity:1}100%{opacity:0}}
-.fm-toast{white-space:nowrap;position:fixed;top:120px;left:50%;transform:translateX(-50%);z-index:70;background:#fff;border-radius:22px;padding:12px 22px;text-align:center;font-weight:800;color:var(--ink);box-shadow:0 10px 30px rgba(0,0,0,.2);animation:fmUp .4s ease-out}
-.fm-toast b{font-size:1.4rem;color:#22B573}
+.fm-hud{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%}
 .fm-coins{background:#FFF4CC;border-radius:999px;padding:6px 14px;font-weight:800;font-size:1.2rem;color:#7A5200;box-shadow:0 4px 0 #E8C766}
 .fm-lv{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--ink)}
-.fm-lv i{white-space:nowrap;font-style:normal;background:linear-gradient(180deg,#7CE3A0,#22B573);color:#fff;border-radius:999px;padding:5px 12px;box-shadow:0 4px 0 #148A55}
+.fm-lv i{font-style:normal;background:linear-gradient(180deg,#7CE3A0,#22B573);color:#fff;border-radius:999px;padding:5px 12px;box-shadow:0 4px 0 #148A55}
 .fm-bar{width:110px;height:14px;border-radius:999px;background:#E3EEDD;overflow:hidden;box-shadow:inset 0 2px 3px rgba(0,0,0,.12)}
 .fm-bar span{display:block;height:100%;background:linear-gradient(90deg,#FFD23F,#FF9F1C);border-radius:999px;transition:width .6s}
 .fm-scene{position:relative;width:100%;border-radius:28px;overflow:hidden;background:linear-gradient(180deg,#9EE0FF 0,#CFF0FF 90px,#8FD86B 90px,#5DBB45 100%);box-shadow:0 8px 22px rgba(30,90,20,.18);padding:96px 12px 14px}
@@ -749,7 +745,7 @@ html.girl .c-sky{--c:#C86BFA;--cd:#9440D0;--cl:#E2A8FF}html.girl .c-coral{--c:#F
 .fm-float{position:fixed;z-index:80;transform:translate(-50%,0);font-weight:800;font-size:1.3rem;color:#7A5200;text-shadow:0 2px 0 #fff,0 0 4px #fff;pointer-events:none;animation:fmFloat 1.1s ease-out forwards}
 @keyframes fmFloat{to{transform:translate(-50%,-70px);opacity:0}}
 .fm-sheet{position:fixed;inset:0;z-index:60;background:rgba(30,20,80,.5);display:flex;align-items:flex-end;justify-content:center;padding:10px}
-.fm-sheet .card{display:block;width:min(520px,100%);max-height:82vh;overflow:auto;background:#fff;border-radius:28px 28px 22px 22px;padding:14px;animation:fmUp .3s ease-out}
+.fm-sheet .card{width:min(520px,100%);max-height:82vh;overflow:auto;background:#fff;border-radius:28px 28px 22px 22px;padding:14px;animation:fmUp .3s ease-out}
 @keyframes fmUp{from{transform:translateY(60px);opacity:0}}
 .fm-sh-h{display:flex;justify-content:space-between;align-items:center;font-size:1.3rem;margin-bottom:6px;color:var(--ink)}
 .fm-x{width:38px;height:38px;border-radius:50%;background:#F0EDFA;font-size:1.1rem;font-weight:800;color:var(--ink)}
@@ -773,8 +769,112 @@ html.girl .c-sky{--c:#C86BFA;--cd:#9440D0;--cl:#E2A8FF}html.girl .c-coral{--c:#F
 .fm-new{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:8px 0 14px}
 .fm-new span{display:flex;flex-direction:column;align-items:center;font-weight:800;font-size:.85rem;background:#F7F5FF;border-radius:16px;padding:6px 10px}
 .fm-new b{font-size:2rem}
+/* ---------- خريطة المزرعة ---------- */
+#sFarm{gap:8px}
+#sFarm .fm-hud{position:sticky;top:-16px;z-index:20;display:flex;align-items:center;gap:8px;width:100%;padding:8px 10px;border-radius:20px;background:rgba(255,255,255,.94);box-shadow:0 6px 16px rgba(30,90,20,.15);backdrop-filter:blur(6px)}
+#sFarm .fm-lv{display:flex;align-items:center;gap:6px}
+#sFarm .fm-lv i{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;font-size:1.1rem;padding:0;background:radial-gradient(circle at 35% 30%,#FFE680,#FFC21A 60%,#D18A00);color:#5A3B00;box-shadow:0 3px 0 #A86E00}
+#sFarm .fm-bar{width:80px}
+#sFarm .fm-coins{font-size:1.05rem;padding:5px 12px}
+.fm-hbtns{margin-inline-start:auto;display:flex;gap:6px}
+.fm-hbtns button{position:relative;width:42px;height:42px;border-radius:14px;font-size:1.35rem;background:linear-gradient(180deg,#FFF,#EEF6E8);box-shadow:0 4px 0 #C9DDBF}
+.fm-hbtns button:active{transform:translateY(3px);box-shadow:0 1px 0 #C9DDBF}
+.fm-hbtns .fm-dot{position:absolute;top:-3px;right:-3px;width:13px;height:13px;border-radius:50%;background:#E0294F;border:2px solid #fff}
+.fm-world{position:relative;width:100%;max-width:620px;border-radius:26px;overflow:hidden;font-size:calc(var(--u)*4.2);
+  background:radial-gradient(circle at 20% 15%,rgba(255,255,255,.18) 0 2px,transparent 3px) 0 0/34px 34px,radial-gradient(circle at 70% 60%,rgba(0,80,0,.08) 0 3px,transparent 4px) 0 0/46px 46px,linear-gradient(180deg,#8ED36A,#77C556 40%,#6DBB4E);box-shadow:inset 0 0 0 4px rgba(255,255,255,.35),0 10px 26px rgba(30,90,20,.25)}
+.fm-path{position:absolute;background:linear-gradient(180deg,#E3C08A,#D2A86C);border-radius:999px;box-shadow:inset 0 2px 0 rgba(255,255,255,.35),inset 0 -2px 0 rgba(0,0,0,.08)}
+.fm-tree{position:absolute;font-size:calc(var(--u)*11);transform:translate(-50%,-50%);filter:drop-shadow(0 4px 2px rgba(0,0,0,.25));animation:fmSway 5s ease-in-out infinite;pointer-events:none;transform-origin:50% 90%}
+@keyframes fmSway{50%{transform:translate(-50%,-50%) rotate(3deg)}}
+.fm-b{position:absolute;display:block;padding:0;background:none;text-align:center;-webkit-tap-highlight-color:transparent}
+.fm-b:active{transform:scale(.96)}
+.fm-svg{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 4px rgba(0,0,0,.18))}
+.fm-lab{display:block;margin-top:-4px;font-style:normal;font-weight:800;font-size:calc(var(--u)*3.3);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.6),0 0 6px rgba(0,0,0,.25);white-space:nowrap}
+.fm-b.bump .fm-svg{animation:fmBump .45s}
+@keyframes fmBump{40%{transform:scale(1.12)}}
+.fm-smoke{position:absolute;top:-8%;right:22%;font-size:calc(var(--u)*5);opacity:.75;animation:fmSmoke 3s ease-out infinite;pointer-events:none}
+.fm-smoke.on{right:18%;animation-duration:1.6s}
+@keyframes fmSmoke{0%{transform:translateY(10px) scale(.5);opacity:0}30%{opacity:.8}100%{transform:translateY(-26px) scale(1.3);opacity:0}}
+.fm-truck{position:absolute;bottom:2%;right:-18%;font-size:calc(var(--u)*9);transform:scaleX(-1);filter:drop-shadow(0 3px 2px rgba(0,0,0,.25))}
+.fm-badge{position:absolute;top:56%;left:50%;transform:translate(-50%,-50%);font-size:calc(var(--u)*6);background:#fff;border-radius:50%;width:1.5em;height:1.5em;display:grid;place-items:center;box-shadow:0 2px 0 rgba(0,0,0,.2)}
+.fm-goods{position:absolute;top:58%;left:50%;transform:translateX(-50%);font-size:calc(var(--u)*5);white-space:nowrap;letter-spacing:-2px}
+/* فقاعات */
+.fm-bub{position:absolute;top:-10%;left:50%;transform:translate(-50%,-50%);min-width:1.9em;height:1.9em;padding:0 .2em;display:grid;place-items:center;font-size:calc(var(--u)*6);background:#fff;border-radius:1em;box-shadow:0 4px 10px rgba(0,0,0,.25);z-index:3}
+.fm-bub::after{content:'';position:absolute;bottom:-.3em;left:50%;margin-left:-.3em;border:.3em solid transparent;border-top-color:#fff;border-bottom:0}
+.fm-bub.ready{animation:fmBob 1s ease-in-out infinite;box-shadow:0 0 0 3px #FFE066,0 4px 12px rgba(0,0,0,.25)}
+.fm-bub.feed{opacity:.9;background:#FFF4E5;box-shadow:0 0 0 2px #FFB36B,0 3px 8px rgba(0,0,0,.2);animation:fmBob 1.6s ease-in-out infinite}
+.fm-bub.sm{font-size:calc(var(--u)*4.5);top:-4%}
+@keyframes fmBob{50%{transform:translate(-50%,-62%)}}
+.fm-tm{position:absolute;bottom:-4%;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;font-style:normal;z-index:3;pointer-events:none}
+.fm-tm b{font-size:calc(var(--u)*2.9);font-weight:800;color:#fff;background:rgba(40,30,10,.7);border-radius:999px;padding:0 .5em;white-space:nowrap}
+.fm-tm s{display:block;width:calc(var(--u)*13);height:5px;border-radius:9px;background:rgba(0,0,0,.35);overflow:hidden;text-decoration:none}
+.fm-tm u{display:block;height:100%;background:linear-gradient(90deg,#9BEA6F,#3FBF3F);text-decoration:none}
+/* الأرض الزراعية */
+#fmWorld .fm-plot{position:absolute;aspect-ratio:auto;padding:0;border-radius:14px;background:none;box-shadow:none;display:block;overflow:visible}
+#fmWorld .fm-plot:active{transform:scale(.95)}
+.fm-soil{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 4px 2px rgba(0,0,0,.2))}
+.fm-empty{position:absolute;inset:0;display:grid;place-items:center;font-size:calc(var(--u)*7);font-weight:800;color:rgba(255,236,200,.75)}
+.fm-crops{position:absolute;inset:6% 8% 14%;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);place-items:center}
+.fm-crops i{font-style:normal;line-height:1;font-size:calc(var(--u)*5.2);transform-origin:50% 90%;animation:fmGrow .5s ease-out both;animation-delay:calc(var(--i)*.04s);filter:drop-shadow(0 2px 1px rgba(0,0,0,.25))}
+.fm-crops.s0 i{font-size:calc(var(--u)*3.6)}.fm-crops.s1 i{font-size:calc(var(--u)*4.6)}.fm-crops.s2 i{font-size:calc(var(--u)*5);opacity:.8}
+.fm-crops.ripe i{font-size:calc(var(--u)*6.2);animation:fmRipe 1.4s ease-in-out infinite;animation-delay:calc(var(--i)*.1s)}
+@keyframes fmGrow{from{transform:scale(.2)}to{transform:scale(1)}}
+@keyframes fmRipe{50%{transform:rotate(6deg) scale(1.06)}}
+.fm-drop{position:absolute;top:-6%;right:-4%;font-size:calc(var(--u)*5);animation:fmBob2 1.6s ease-in-out infinite}
+@keyframes fmBob2{50%{transform:translateY(-4px)}}
+#fmWorld .fm-plot.watering::after{content:'💧💧💧';position:absolute;top:-20%;left:0;right:0;text-align:center;font-size:calc(var(--u)*5);animation:fmRain .7s ease-in forwards}
+#fmWorld .fm-plot.buy{display:flex;flex-direction:column;align-items:center;justify-content:center;border:3px dashed rgba(255,255,255,.85);background:rgba(255,255,255,.25);color:#2E5A1C;font-weight:800}
+#fmWorld .fm-plot.buy span{font-size:calc(var(--u)*7)}#fmWorld .fm-plot.buy small{font-size:calc(var(--u)*2.8);line-height:1.3}
+#fmWorld .fm-plot.wild{display:grid;place-items:center;font-size:calc(var(--u)*7);opacity:.35;border:2px dashed rgba(255,255,255,.4);pointer-events:none}
+/* الحظاير */
+.fm-pen{position:absolute;border-radius:16px;background:var(--pg);box-shadow:inset 0 0 0 calc(var(--u)*1.3) #B07A44,inset 0 0 0 calc(var(--u)*1.8) #8B5A2B,0 5px 0 rgba(0,0,0,.12)}
+.fm-pen::before{content:'';position:absolute;inset:calc(var(--u)*.4);border-radius:14px;background:repeating-linear-gradient(90deg,transparent 0 calc(var(--u)*5),rgba(139,90,43,.9) calc(var(--u)*5) calc(var(--u)*5.8));-webkit-mask:linear-gradient(#000 0 0) top/100% calc(var(--u)*1.6) no-repeat,linear-gradient(#000 0 0) bottom/100% calc(var(--u)*1.6) no-repeat;mask:linear-gradient(#000 0 0) top/100% calc(var(--u)*1.6) no-repeat,linear-gradient(#000 0 0) bottom/100% calc(var(--u)*1.6) no-repeat;pointer-events:none}
+.fm-pen.lock{background:rgba(255,255,255,.2);box-shadow:none;border:3px dashed rgba(255,255,255,.7)}
+.fm-pen.lock::before{display:none}
+.fm-penlab{position:absolute;bottom:-11%;left:0;right:0;text-align:center;z-index:3;font-style:normal;font-weight:800;font-size:calc(var(--u)*3.2);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.fm-shed{z-index:2}
+.fm-an{position:absolute;width:calc(var(--u)*11);height:calc(var(--u)*11);margin:calc(var(--u)*-5.5) 0 0 calc(var(--u)*-5.5);padding:0;background:none;animation:fmWalk 7s ease-in-out infinite;z-index:2}
+.fm-ae{display:block;font-size:calc(var(--u)*9);line-height:1;filter:drop-shadow(0 3px 2px rgba(0,0,0,.3));animation:fmFlip 7s steps(1) infinite}
+.fm-an.busy .fm-ae{animation:fmEat .8s ease-in-out infinite}
+.fm-an.busy{animation-play-state:paused}
+@keyframes fmWalk{0%,100%{transform:translateX(0)}25%{transform:translateX(calc(var(--u)*4))}50%{transform:translateX(0) translateY(calc(var(--u)*-1.5))}75%{transform:translateX(calc(var(--u)*-4))}}
+@keyframes fmFlip{0%{transform:scaleX(1)}50%{transform:scaleX(-1)}}
+@keyframes fmEat{50%{transform:rotate(-10deg) translateY(2px)}}
+.fm-an .fm-bub{top:-30%}
+.fm-an .fm-tm{bottom:-30%}
+.fm-addan{position:absolute;transform:translate(-50%,-50%);border:2px dashed rgba(255,255,255,.95);border-radius:14px;background:rgba(255,255,255,.35);padding:2px 6px;font-size:calc(var(--u)*4.2);font-weight:800;color:#3A2A10;display:flex;flex-direction:column;align-items:center;line-height:1.1}
+.fm-addan small{font-size:calc(var(--u)*2.7)}
+/* المباني المقفولة */
+.fm-lockb .fm-ghost{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);font-size:calc(var(--u)*9);filter:grayscale(1) opacity(.55)}
+.fm-lockb .fm-sign{display:inline-block;margin-top:2px;background:#FFF4CC;color:#6B4E00;font-weight:800;font-size:calc(var(--u)*3);border-radius:999px;padding:1px 8px;box-shadow:0 2px 0 #E8C766;white-space:nowrap}
+.fm-b.building .fm-build{display:block;font-size:calc(var(--u)*14);animation:fmBuild .3s ease-in-out infinite}
+@keyframes fmBuild{50%{transform:translateY(-4px) rotate(-4deg)}}
+.fm-fac.busy .fm-svg{animation:fmWork 1.2s ease-in-out infinite}
+@keyframes fmWork{50%{transform:scale(1.02,.98)}}
+.fm-dc{position:absolute;font-size:calc(var(--u)*9);transform:translate(-50%,-50%);filter:drop-shadow(0 4px 2px rgba(0,0,0,.25));pointer-events:none;animation:fmSway 6s ease-in-out infinite}
+.flash{animation:fmFlash 1.2s ease 2!important}
+@keyframes fmFlash{50%{filter:drop-shadow(0 0 14px #FFE066) brightness(1.25)}}
+/* فقاعة الاختيارات */
+.fm-pop{position:absolute;z-index:30;background:#fff;border-radius:18px;padding:10px 12px;box-shadow:0 10px 30px rgba(0,0,0,.3);text-align:center;color:var(--ink);font-size:.95rem;animation:ccIn .25s cubic-bezier(.2,1.4,.4,1)}
+.fm-pop::after{content:'';position:absolute;bottom:-9px;left:var(--ax);margin-left:-9px;border:9px solid transparent;border-top-color:#fff;border-bottom:0}
+.fm-pop.below::after{bottom:auto;top:-9px;border:9px solid transparent;border-bottom-color:#fff;border-top:0}
+.fm-pop b{display:block;font-size:1.05rem;margin-bottom:4px}.fm-pop p{margin:2px 0 6px;color:var(--muted);font-weight:700}
+.fm-seedg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:6px 0}
+.fm-sd{display:flex;flex-direction:column;align-items:center;padding:6px 2px;border-radius:12px;background:#F4FBEF;box-shadow:0 3px 0 #D6E9C9}
+.fm-sd b{font-size:1.6rem;margin:0}.fm-sd span{font-weight:800;font-size:.8rem}.fm-sd small{font-size:.62rem;color:var(--muted);white-space:nowrap}
+.fm-sd.on{background:#E2F7D2;box-shadow:0 0 0 2px #3FBF3F,0 3px 0 #9BCB86}.fm-sd.lock{opacity:.5}
+.fm-all,.fm-go{width:100%;margin-top:4px;border-radius:14px;padding:9px;font-weight:800;color:#fff;background:linear-gradient(180deg,#3FD08A,#22B573);box-shadow:0 4px 0 #148A55}
+.fm-go[disabled]{background:#CFCBDD;box-shadow:0 4px 0 #A9A4BE}
+.fm-rec{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;font-weight:800;margin:6px 0}
+.fm-rec span{background:#F4F1FF;border-radius:10px;padding:3px 7px}.fm-rec span.have{background:#E2F7D2}.fm-rec span.miss{background:#FFE3E3}.fm-rec span.out{font-size:1.4rem;background:#FFF4CC}
+.fm-fly{position:fixed;z-index:200;font-size:2rem;transform:translate(0,0);transition:transform .75s cubic-bezier(.5,-.3,.6,1),opacity .75s;pointer-events:none;margin:-1rem 0 0 -1rem}
+.fm-invg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.fm-invg .fm-it{display:flex;flex-direction:column;align-items:center;background:#F7F4FF;border-radius:14px;padding:8px;font-weight:800;font-size:.85rem}
+.fm-invg .fm-it b{font-size:1.8rem}.fm-invg .fm-it em{font-style:normal;color:#5236C4;font-size:1.1rem}
+.fm-empty2{text-align:center;font-weight:800;color:var(--muted)}
 
-
+.fm-pond{position:absolute;border-radius:50%;background:radial-gradient(ellipse at 40% 35%,#9FE3FF,#3BA9E8 60%,#2C86C2);box-shadow:inset 0 0 0 calc(var(--u)*1.2) #C9B48A,0 4px 0 rgba(0,0,0,.12)}
+.fm-duck{position:absolute;top:30%;left:20%;font-size:calc(var(--u)*7);animation:fmSwim 9s ease-in-out infinite}
+@keyframes fmSwim{0%,100%{transform:translateX(0) scaleX(1)}45%{transform:translateX(calc(var(--u)*14)) scaleX(1)}50%{transform:translateX(calc(var(--u)*14)) scaleX(-1)}95%{transform:translateX(0) scaleX(-1)}}
 /* ---------- الرياضيات ---------- */
 .ma-lang{display:flex;gap:6px;background:#fff;border-radius:999px;padding:5px;box-shadow:0 4px 0 #DCD6EE;align-self:center}
 .ma-lang button{border-radius:999px;padding:7px 18px;font-weight:800;font-size:1rem;color:var(--muted);background:none}
@@ -3023,6 +3123,7 @@ function chCheckEnd(){
   CH.over='تعادل 🤝';speak([{say:CH_SAY.draw}]);chDraw();return true;
 }
 
+
 /* ---------- المزرعة السعيدة: ازرع واحصد وابني، وفيها مستويات ومهام ---------- */
 const FARM_SAY={
  welcome:['أَهْلاً بِيك فِي المَزْرَعَة السَّعِيدَة! اِزْرَع، وِاحْصُد، وِابْنِي مَزْرَعْتَك.','أَهْلاً بِيكِي فِي المَزْرَعَة السَّعِيدَة! اِزْرَعِي، وِاحْصُدِي، وِابْنِي مَزْرَعْتِك.'],
@@ -3038,8 +3139,7 @@ const FARM_SAY={
  product:['المُنْتَج جاهِز! دُوس عَلِيه عَشان تاخْدُه.','المُنْتَج جاهِز! دُوسِي عَلِيه عَشان تاخْدِيه.'],
  need:['مِحْتاج حاجات الأَوِّل. شُوف المَطْلُوب.','مِحْتاجَة حاجات الأَوِّل. شُوفِي المَطْلُوب.'],
  plot:['اِشْتَرِيت أَرْض جِدِيدَة!','اِشْتَرِيتِي أَرْض جِدِيدَة!'],
- lock:'دِي هَتِتْفِتِح فِي مُسْتَوَى أَعْلَى.',
- back:['أَهْلاً بِيك تانِي! مَزْرَعْتَك مِتْسَجِّلَة زَيّ ما سِبْتَها، يَلَّا نِكَمِّل.','أَهْلاً بِيكِي تانِي! مَزْرَعْتِك مِتْسَجِّلَة زَيّ ما سِبْتِيها، يَلَّا نِكَمِّل.']
+ lock:'دِي هَتِتْفِتِح فِي مُسْتَوَى أَعْلَى.'
 };
 // المحاصيل: lv مستوى الفتح، c سعر البذرة، t وقت الطوي بالثواني، s سعر البيع، x خبرة
 const FCROP={
@@ -3050,45 +3150,35 @@ const FCROP={
  straw:{n:'فراولة',e:'🍓',lv:4,c:14,t:110,s:28,x:5},
  sun:{n:'عباد الشمس',e:'🌻',lv:5,c:18,t:140,s:36,x:6},
  pumpkin:{n:'قرع',e:'🎃',lv:7,c:28,t:220,s:58,x:8},
- melon:{n:'بطيخ',e:'🍉',lv:9,c:36,t:300,s:76,x:10},
- potato:{n:'بطاطس',e:'🥔',lv:11,c:40,t:320,s:84,x:11},
- grape:{n:'عنب',e:'🍇',lv:12,c:45,t:360,s:95,x:12},
- pepper:{n:'فلفل',e:'🌶️',lv:14,c:50,t:380,s:104,x:13},
- pine:{n:'أناناس',e:'🍍',lv:16,c:60,t:420,s:124,x:15},
- eggpl:{n:'باذنجان',e:'🍆',lv:18,c:66,t:450,s:136,x:16},
- cherry:{n:'كريز',e:'🍒',lv:20,c:75,t:480,s:155,x:18},
- avocado:{n:'أفوكادو',e:'🥑',lv:23,c:90,t:540,s:185,x:21},
- coco:{n:'جوز هند',e:'🥥',lv:26,c:110,t:600,s:225,x:25}};
+ melon:{n:'بطيخ',e:'🍉',lv:9,c:36,t:300,s:76,x:10}};
 // المباني: in المطلوب، out الناتج، t الوقت
+const FPROD={egg:{n:'بيض',e:'🥚',s:10,x:2},milk:{n:'لبن',e:'🥛',s:16,x:3},bread:{n:'عيش',e:'🍞',s:34,x:5},wool:{n:'صوف',e:'🧶',s:30,x:5},juice:{n:'عصير',e:'🧃',s:38,x:5},cake:{n:'كيك',e:'🍰',s:70,x:9},honey:{n:'عسل',e:'🍯',s:60,x:8}};
+const FDECO={tree:{n:'شجرة',e:'🌳',lv:2,c:25,x:4},flower:{n:'ورد',e:'🌷',lv:3,c:30,x:5},well:{n:'بير مية',e:'⛲',lv:4,c:60,x:8},house:{n:'بيت المزرعة',e:'🏡',lv:5,c:120,x:15},mill:{n:'طاحونة',e:'🌬️',lv:6,c:160,x:18},dog:{n:'كلب الحراسة',e:'🐕',lv:7,c:140,x:15},tractor:{n:'جرار',e:'🚜',lv:9,c:300,x:30}};
+// ---------- خريطة المزرعة: كل حاجة متبنية بتبان على الأرض ----------
+// type: pen = حظيرة فيها حيوانات بتاكل وتنتج، fac = مصنع بيحوّل مواد لمنتج
 const FBLD={
- coop:{n:'عشة الفراخ',e:'🐔',lv:2,c:40,in:{wheat:2},out:'egg',t:40},
- barn:{n:'زريبة البقرة',e:'🐄',lv:3,c:90,in:{corn:1},out:'milk',t:60},
- bakery:{n:'المخبز',e:'🏪',lv:4,c:150,in:{wheat:3,egg:1},out:'bread',t:75},
- sheep:{n:'حظيرة الخرفان',e:'🐑',lv:5,c:200,in:{carrot:2},out:'wool',t:90},
- juice:{n:'مصنع العصير',e:'🏭',lv:6,c:260,in:{straw:2},out:'juice',t:80},
- cake:{n:'محل الكيك',e:'🧁',lv:8,c:380,in:{egg:2,milk:1,straw:1},out:'cake',t:120},
- bees:{n:'خلية النحل',e:'🐝',lv:10,c:450,in:{sun:2},out:'honey',t:110},
- cheese:{n:'مصنع الجبنة',e:'🧀',lv:12,c:520,in:{milk:2},out:'chz',t:120},
- popcorn:{n:'عربية الفشار',e:'🍿',lv:13,c:560,in:{corn:3},out:'pop',t:100},
- pizza:{n:'محل البيتزا',e:'🍕',lv:15,c:700,in:{bread:1,tomato:2,chz:1},out:'piz',t:150},
- icecr:{n:'محل الآيس كريم',e:'🍦',lv:17,c:780,in:{milk:2,straw:2},out:'ice',t:140},
- salad:{n:'مطبخ السلطة',e:'🥗',lv:19,c:850,in:{tomato:2,carrot:2,pepper:1},out:'sal',t:130},
- choco:{n:'مصنع الشوكولاتة',e:'🍫',lv:21,c:950,in:{milk:1,honey:1},out:'cho',t:160},
- jam:{n:'مصنع المربى',e:'🫙',lv:24,c:1100,in:{grape:3,cherry:1},out:'jam',t:170},
- pie:{n:'فرن الفطاير',e:'🥧',lv:28,c:1400,in:{pine:1,egg:2,bread:1},out:'pie',t:200}};
-const FPROD={egg:{n:'بيض',e:'🥚',s:10,x:2},milk:{n:'لبن',e:'🥛',s:16,x:3},bread:{n:'عيش',e:'🍞',s:34,x:5},wool:{n:'صوف',e:'🧶',s:30,x:5},juice:{n:'عصير',e:'🧃',s:38,x:5},cake:{n:'كيك',e:'🍰',s:70,x:9},honey:{n:'عسل',e:'🍯',s:60,x:8},chz:{n:'جبنة',e:'🧀',s:45,x:6},pop:{n:'فشار',e:'🍿',s:72,x:8},piz:{n:'بيتزا',e:'🍕',s:190,x:18},ice:{n:'آيس كريم',e:'🍦',s:120,x:13},sal:{n:'سلطة',e:'🥗',s:160,x:15},cho:{n:'شوكولاتة',e:'🍫',s:110,x:12},jam:{n:'مربى',e:'🫙',s:330,x:28},pie:{n:'فطيرة',e:'🥧',s:320,x:30}};
-const FDECO={tree:{n:'شجرة',e:'🌳',lv:2,c:25,x:4},flower:{n:'ورد',e:'🌷',lv:3,c:30,x:5},well:{n:'بير مية',e:'⛲',lv:4,c:60,x:8},house:{n:'بيت المزرعة',e:'🏡',lv:5,c:120,x:15},mill:{n:'طاحونة',e:'🌬️',lv:6,c:160,x:18},dog:{n:'كلب الحراسة',e:'🐕',lv:7,c:140,x:15},tractor:{n:'جرار',e:'🚜',lv:9,c:300,x:30},swing:{n:'مرجيحة',e:'🎠',lv:11,c:380,x:35},rainbow:{n:'قوس قزح',e:'🌈',lv:15,c:520,x:45},tent:{n:'خيمة',e:'⛺',lv:18,c:620,x:52},heli:{n:'هليكوبتر',e:'🚁',lv:22,c:900,x:70},wheel:{n:'عجلة الملاهي',e:'🎡',lv:25,c:1200,x:90},castle:{n:'قصر',e:'🏰',lv:28,c:1600,x:120},cup:{n:'كاس البطولة',e:'🏆',lv:30,c:2000,x:150}};
+ coop:{n:'عشة الفراخ',e:'🐔',lv:2,c:40,type:'pen',an:'🐔',feed:'wheat',out:'egg',t:40,ac:20,max:4},
+ barn:{n:'حظيرة البقر',e:'🐄',lv:3,c:90,type:'pen',an:'🐄',feed:'corn',out:'milk',t:60,ac:45,max:3},
+ bakery:{n:'المخبز',e:'🏪',lv:4,c:150,type:'fac',in:{wheat:3,egg:1},out:'bread',t:75},
+ sheep:{n:'حظيرة الخرفان',e:'🐑',lv:5,c:200,type:'pen',an:'🐑',feed:'carrot',out:'wool',t:90,ac:60,max:3},
+ juice:{n:'مصنع العصير',e:'🏭',lv:6,c:260,type:'fac',in:{straw:2},out:'juice',t:80},
+ cake:{n:'محل الكيك',e:'🧁',lv:8,c:380,type:'fac',in:{egg:2,milk:1,straw:1},out:'cake',t:120},
+ bees:{n:'خلية النحل',e:'🐝',lv:10,c:450,type:'pen',an:'🐝',feed:'sun',out:'honey',t:110,ac:80,max:3}};
 const FITEM=k=>FCROP[k]||FPROD[k];
-const FMAXLV=30, FPLOT_MAX=15, fNeed=l=>12+l*10;
+const FMAXLV=15, FPLOT_MAX=12, fNeed=l=>12+l*10;
 const FCUST=['👵','👴','🧑‍🌾','👩‍🍳','👦','👧','🧕','👨‍🍳'];
-let F=null, FSEL='wheat', FT=0;
+let F=null, FSEL='wheat', FT=0, FW=360;
 function fLoad(){
   F=pget('farm',null);
   if(!F||!F.plots)F={coins:30,xp:0,lvl:1,plots:Array.from({length:6},()=>({c:null,t0:0,w:0})),inv:{wheat:2},bld:{},deco:[],tasks:[],done:0};
   F.inv=F.inv||{};F.bld=F.bld||{};F.deco=F.deco||[];F.tasks=F.tasks||[];
+  // تحويل الحفظ القديم: الحظيرة بقت فيها حيوانات كل واحد لوحده
+  for(const k in F.bld){const b=FBLD[k];if(!b){delete F.bld[k];continue}const o=F.bld[k];
+    if(b.type==='pen'&&!o.a){o.a=[{t0:o.t0||0},{t0:0}];delete o.t0}
+    if(b.type==='fac'&&o.t0===undefined)o.t0=0}
   while(F.tasks.length<3)F.tasks.push(fNewTask());
 }
-function fSave(){pset('farm',F);const s=$('#fmSaved');if(s){s.classList.remove('on');void s.offsetWidth;s.classList.add('on')}}
+function fSave(){pset('farm',F)}
 const fNow=()=>Date.now();
 function fCropsOpen(){return Object.keys(FCROP).filter(k=>FCROP[k].lv<=F.lvl)}
 function fItemsOpen(){const it=fCropsOpen();for(const k in FBLD)if(F.bld[k])it.push(FBLD[k].out);return it}
@@ -3121,92 +3211,210 @@ function fFloat(el,txt){
 const fCoinSnd=()=>tone([988,1319],'square',.06);
 function fStage(p){const cr=FCROP[p.c],el=(fNow()-p.t0)/1000,pr=Math.min(1,el/cr.t);return{pr,left:Math.max(0,Math.ceil(cr.t-el))}}
 function fTime(s){return s>=60?`${arDigits(Math.floor(s/60))}:${arDigits(String(s%60).padStart(2,'0'))}`:`${arDigits(s)} ث`}
+// ---------- رسم المزرعة ----------
+// الأماكن على الخريطة بالنسبة لعرض الشاشة (x,y من عرض الخريطة)
+const FM_H=2.5;
+const FM_FAC={bakery:[.18,1.6],juice:[.5,1.6],cake:[.82,1.6]};
+const FM_PEN={coop:[.025,1.065,.31,.355],barn:[.345,1.065,.31,.355],sheep:[.665,1.065,.31,.355],bees:[.04,1.845,.44,.32]};
+const FM_DECO=[[.1,2.27],[.3,2.28],[.5,2.27],[.12,2.42],[.32,2.43],[.52,2.42],[.03,.995],[.97,.995],[.53,2.03],[.9,2.44],[.7,2.45]];
+const FM_TREES=[[.02,.27,'🌳'],[.98,.27,'🌲'],[.02,.62,'🌲'],[.98,.6,'🌳'],[.02,2.2,'🌳'],[.98,2.18,'🌲'],[.02,2.47,'🌲'],[.97,2.47,'🌳']];
+// ---- رسومات المباني (SVG) ----
+function fWall(w,roof,o){o=o||{};return`<svg viewBox="0 0 120 112" class="fm-svg"><ellipse cx="60" cy="104" rx="52" ry="7" fill="rgba(0,0,0,.18)"/>
+ ${o.chim?`<rect x="78" y="10" width="12" height="26" rx="2" fill="#8A5A44"/><rect x="76" y="8" width="16" height="6" rx="2" fill="#6E4535"/>`:''}
+ <rect x="14" y="44" width="92" height="58" rx="5" fill="${w}" stroke="rgba(0,0,0,.18)" stroke-width="2"/>
+ ${o.planks?`<path d="M14 58H106M14 72H106M14 86H106" stroke="rgba(0,0,0,.12)" stroke-width="2"/>`:''}
+ <path d="M6 48L60 12 114 48Z" fill="${roof}" stroke="rgba(0,0,0,.2)" stroke-width="2" stroke-linejoin="round"/>
+ <path d="M6 48L60 12 114 48" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3" stroke-linejoin="round" transform="translate(0,4)"/>
+ ${o.awn?`<path d="M14 50H106V60Q100 66 94 60 88 66 82 60 76 66 70 60 64 66 58 60 52 66 46 60 40 66 34 60 28 66 22 60 16 66 14 60Z" fill="${o.awn}"/><path d="M26 50V62M50 50V62M74 50V62M98 50V62" stroke="#fff" stroke-width="7" opacity=".85"/>`:''}
+ <rect x="48" y="70" width="24" height="32" rx="3" fill="${o.door||'#7A4A2A'}"/><circle cx="67" cy="87" r="2" fill="#FFD23F"/>
+ <rect x="22" y="66" width="18" height="16" rx="3" fill="#BFE8FF" stroke="#fff" stroke-width="3"/><rect x="80" y="66" width="18" height="16" rx="3" fill="#BFE8FF" stroke="#fff" stroke-width="3"/>
+</svg>`}
+const FM_ART={
+ house:()=>fWall('#F7E3C0','#D9483B',{chim:1}),
+ silo:()=>`<svg viewBox="0 0 140 112" class="fm-svg"><ellipse cx="70" cy="104" rx="64" ry="7" fill="rgba(0,0,0,.18)"/>
+  <rect x="100" y="18" width="30" height="84" rx="4" fill="#C9CED6" stroke="#9AA1AC" stroke-width="2"/><path d="M100 22Q115 2 130 22Z" fill="#8E96A3"/><path d="M100 40H130M100 60H130M100 80H130" stroke="#9AA1AC" stroke-width="2"/>
+  <rect x="10" y="40" width="94" height="62" rx="4" fill="#C8372D" stroke="#8E2018" stroke-width="2"/><path d="M4 44L57 10 110 44Z" fill="#7A2A22"/><path d="M14 46L57 18 100 46" fill="none" stroke="#fff" stroke-width="4"/>
+  <rect x="36" y="58" width="42" height="44" fill="#fff"/><rect x="40" y="62" width="34" height="40" fill="#A42A20"/><path d="M40 62L74 102M74 62L40 102" stroke="#fff" stroke-width="4"/><circle cx="57" cy="32" r="7" fill="#fff"/><circle cx="57" cy="32" r="4" fill="#8E2018"/></svg>`,
+ board:()=>`<svg viewBox="0 0 120 112" class="fm-svg"><ellipse cx="60" cy="104" rx="46" ry="6" fill="rgba(0,0,0,.18)"/><rect x="22" y="56" width="8" height="48" fill="#7A4A2A"/><rect x="90" y="56" width="8" height="48" fill="#7A4A2A"/>
+  <rect x="12" y="14" width="96" height="58" rx="6" fill="#B97A45" stroke="#7A4A2A" stroke-width="3"/><path d="M12 30H108M12 46H108M12 62H108" stroke="rgba(0,0,0,.12)" stroke-width="2"/>
+  <rect x="20" y="22" width="24" height="30" fill="#FFFDF2" transform="rotate(-6 32 37)"/><rect x="48" y="20" width="24" height="30" fill="#FFF3C4" transform="rotate(4 60 35)"/><rect x="76" y="22" width="24" height="30" fill="#FFFDF2" transform="rotate(-3 88 37)"/>
+  <circle cx="32" cy="24" r="3" fill="#E0294F"/><circle cx="60" cy="22" r="3" fill="#2F8FE6"/><circle cx="88" cy="24" r="3" fill="#2DC653"/></svg>`,
+ coop:()=>fWall('#C98A4B','#8B4A2B',{planks:1,door:'#5A3418'}),
+ barn:()=>fWall('#E9E2D0','#3E7CB1',{planks:1,door:'#5A6B7A'}),
+ sheep:()=>fWall('#D9C7A3','#6B8E23',{planks:1,door:'#6A5131'}),
+ bakery:()=>fWall('#FFE3B3','#E07A2E',{chim:1,door:'#A0522D'}),
+ juice:()=>fWall('#D7F0FF','#2F8FE6',{chim:1,door:'#3A6EA5'}),
+ cake:()=>fWall('#FFE0EF','#F25C8E',{awn:'#FF8FB8',door:'#C2185B'}),
+ bees:()=>`<svg viewBox="0 0 120 112" class="fm-svg"><ellipse cx="60" cy="104" rx="40" ry="6" fill="rgba(0,0,0,.18)"/><rect x="30" y="74" width="60" height="28" rx="4" fill="#F2B632" stroke="#B9831B" stroke-width="2"/><rect x="34" y="48" width="52" height="26" rx="4" fill="#F7C548" stroke="#B9831B" stroke-width="2"/><rect x="38" y="24" width="44" height="24" rx="4" fill="#FFD866" stroke="#B9831B" stroke-width="2"/><path d="M32 20H88L82 12H38Z" fill="#8B5A2B"/><rect x="52" y="92" width="16" height="5" rx="2" fill="#5A3A10"/></svg>`,
+ stall:()=>`<svg viewBox="0 0 120 112" class="fm-svg"><ellipse cx="60" cy="104" rx="52" ry="6" fill="rgba(0,0,0,.18)"/><rect x="16" y="40" width="6" height="62" fill="#7A4A2A"/><rect x="98" y="40" width="6" height="62" fill="#7A4A2A"/>
+  <path d="M8 22H112L104 44H16Z" fill="#E0294F"/><path d="M26 22L22 44M46 22L44 44M66 22V44M86 22L88 44" stroke="#fff" stroke-width="9"/><path d="M16 44Q21 52 26 44 31 52 36 44 41 52 46 44 51 52 56 44 61 52 66 44 71 52 76 44 81 52 86 44 91 52 96 44 101 52 104 44Z" fill="#E0294F"/>
+  <rect x="12" y="72" width="96" height="30" rx="4" fill="#C98A4B" stroke="#7A4A2A" stroke-width="2"/><path d="M12 86H108" stroke="rgba(0,0,0,.15)" stroke-width="2"/></svg>`,
+ lock:()=>`<svg viewBox="0 0 120 112" class="fm-svg"><ellipse cx="60" cy="104" rx="48" ry="6" fill="rgba(0,0,0,.12)"/><path d="M14 102V46L60 14 106 46V102Z" fill="rgba(255,255,255,.35)" stroke="rgba(255,255,255,.9)" stroke-width="3" stroke-dasharray="8 6" stroke-linejoin="round"/></svg>`,
+ soil:()=>`<svg viewBox="0 0 100 100" preserveAspectRatio="none" class="fm-soil"><rect x="2" y="4" width="96" height="92" rx="12" fill="#7A4C22"/><rect x="2" y="2" width="96" height="88" rx="12" fill="#946032"/>${[16,32,48,64,80].map(y=>`<path d="M10 ${y}Q50 ${y+5} 90 ${y}" stroke="#6E431C" stroke-width="5" fill="none" stroke-linecap="round"/>`).join('')}</svg>`
+};
+const FM_PENBG={coop:'#E8D6A6',barn:'#7FCB5B',sheep:'#8BD468',bees:'#9BDA74'};
+// ---- أدوات ----
+const fx=v=>v*FW+'px';
+function fPx(el){const r=el.getBoundingClientRect();return[r.left+r.width/2,r.top+r.height/2]}
+function fFly(fromEl,emo){const s=$('#fmSilo');if(!fromEl||!s)return;const[a,b]=fPx(fromEl),[c,d]=fPx(s);const e=document.createElement('div');e.className='fm-fly';e.textContent=emo;
+  e.style.left=a+'px';e.style.top=b+'px';document.body.appendChild(e);requestAnimationFrame(()=>{e.style.transform=`translate(${c-a}px,${d-b}px) scale(.6)`;e.style.opacity='.2'});
+  setTimeout(()=>{e.remove();s.classList.remove('bump');void s.offsetWidth;s.classList.add('bump')},800)}
+function fPopClose(){document.querySelectorAll('.fm-pop').forEach(p=>p.remove())}
+function fPop(anchor,html){fPopClose();const w=$('#fmWorld');const p=document.createElement('div');p.className='fm-pop';p.innerHTML=html;w.appendChild(p);
+  const wr=w.getBoundingClientRect(),r=anchor.getBoundingClientRect();let x=r.left-wr.left+r.width/2,y=r.top-wr.top;
+  const pw=Math.min(300,FW-16);p.style.width=pw+'px';p.style.left=Math.max(8,Math.min(FW-pw-8,x-pw/2))+'px';
+  const ph=p.offsetHeight;if(y-ph-10<4){p.style.top=(r.bottom-wr.top+10)+'px';p.classList.add('below')}else p.style.top=(y-ph-10)+'px';
+  p.style.setProperty('--ax',(x-parseFloat(p.style.left))+'px');p.onclick=e=>e.stopPropagation();return p}
+const fLeft=(t0,dur)=>Math.max(0,Math.ceil(dur-(fNow()-t0)/1000));
+const fRing=(t0,dur)=>`<i class="fm-tm" data-t0="${t0}" data-d="${dur}"><b>${fTime(fLeft(t0,dur))}</b><s><u style="width:${Math.min(100,(fNow()-t0)/10/dur)}%"></u></s></i>`;
+// ---- فتح الشاشة ----
 function fOpen(){
   if(!$('#sFarm')){const s=document.createElement('section');s.className='screen';s.id='sFarm';s.hidden=true;
-    s.innerHTML=`<div class="fm-hud"><span class="fm-coins">🪙 <b id="fmCoins"></b></span><span class="fm-saved" id="fmSaved">💾 اتحفظ</span><span class="fm-lv"><i id="fmLv"></i><span class="fm-bar"><span id="fmXP"></span></span></span></div>
-      <div class="fm-scene"><div class="fm-sky"><span class="fm-sunb">☀️</span><span class="fm-cloud c1">☁️</span><span class="fm-cloud c2">☁️</span></div>
-        <div class="fm-deco" id="fmDeco"></div><div class="fm-field" id="fmField"></div></div>
-      <div class="fm-seeds" id="fmSeeds"></div>
-      <p class="sec-title">🏠 المباني</p><div class="fm-blds" id="fmBlds"></div>
-      <p class="sec-title">📦 المخزن</p><div class="fm-inv" id="fmInv"></div>
-      <div class="fm-tools"><button class="btn2 c-teal" id="fmTasksB">📋 المهام <span class="fm-dot" id="fmTDot"></span></button><button class="btn2 c-sun" id="fmShopB">🔨 ابني وزيّن</button><button class="btn2 c-coral" id="fmSellB">💰 السوق</button></div>`;
+    s.innerHTML=`<div class="fm-hud"><span class="fm-lv"><i id="fmLv"></i><span class="fm-bar"><span id="fmXP"></span></span></span><span class="fm-coins">🪙 <b id="fmCoins"></b></span>
+      <span class="fm-hbtns"><button id="fmShopB" aria-label="ابني وزيّن">🔨</button><button id="fmTasksB" aria-label="الطلبات">📋<span class="fm-dot" id="fmTDot"></span></button><button id="fmInvB" aria-label="المخزن">📦</button></span></div>
+      <div class="fm-world" id="fmWorld"></div>`;
     $('#main').appendChild(s);SCREENS.farm='#sFarm';
-    $('#fmTasksB').onclick=fTasks;$('#fmShopB').onclick=fShop;$('#fmSellB').onclick=fMarket;
+    $('#fmTasksB').onclick=fTasks;$('#fmShopB').onclick=fShop;$('#fmInvB').onclick=fInvSheet;
+    $('#fmWorld').addEventListener('click',fPopClose);
+    addEventListener('resize',()=>{if(S.screen==='farm')fDraw()});
   }
   fLoad();show('farm');fDraw();clearInterval(FT);FT=setInterval(()=>{if(S.screen!=='farm'){clearInterval(FT);return}fTick()},1000);
   const ready=F.plots.some(p=>p.c&&fStage(p).pr>=1);
-  const back=F.lvl>1||F.done>0||F.xp>0;
-  if(back){const t=document.createElement('div');t.className='fm-toast';t.innerHTML=`💾 ${g('رجعت','رجعتي')} لمزرعتك<br><b>المستوى ${arDigits(F.lvl)}</b> · 🪙 ${arDigits(F.coins)}`;$('#sFarm').appendChild(t);setTimeout(()=>t.remove(),3200)}
-  speak([{say:gs(back?FARM_SAY.back:FARM_SAY.welcome)},...(ready?[{say:FARM_SAY.ready}]:back?[]:[{say:gs(FARM_SAY.how)}])]);
+  speak([{say:gs(FARM_SAY.welcome)},...(ready?[{say:FARM_SAY.ready}]:[{say:gs(FARM_SAY.how)}])]);
 }
 function fTick(){
-  document.querySelectorAll('#fmField .fm-plot').forEach(el=>{const p=F.plots[+el.dataset.i];if(!p||!p.c)return;const st=fStage(p),was=el.dataset.ready==='1';
-    if(st.pr>=1&&!was){fDrawPlot(el,p)}else if(st.pr<1){const b=el.querySelector('.fm-pb i');if(b)b.style.width=(st.pr*100)+'%';const t=el.querySelector('.fm-tl');if(t)t.textContent=fTime(st.left);
-      const em=el.querySelector('.fm-crop');const stg=st.pr<.34?0:st.pr<.7?1:2;if(em&&+em.dataset.s!==stg)fDrawPlot(el,p)}});
-  document.querySelectorAll('#fmBlds .fm-bld').forEach(el=>{const k=el.dataset.k,b=F.bld[k];if(!b||!b.t0)return;const left=Math.ceil(FBLD[k].t-(fNow()-b.t0)/1000);
-    if(left<=0&&el.dataset.ready!=='1')fDrawBlds();else{const t=el.querySelector('.fm-tl');if(t&&left>0)t.textContent=fTime(left)}});
+  let redraw=false;
+  document.querySelectorAll('#fmWorld .fm-tm').forEach(t=>{const t0=+t.dataset.t0,d=+t.dataset.d,l=fLeft(t0,d);if(l<=0){redraw=true;return}
+    t.querySelector('b').textContent=fTime(l);t.querySelector('u').style.width=Math.min(100,(fNow()-t0)/10/d)+'%'});
+  document.querySelectorAll('#fmWorld .fm-plot').forEach(el=>{const p=F.plots[+el.dataset.i];if(p&&p.c){const st=fStage(p),stg=st.pr>=1?3:st.pr<.34?0:st.pr<.7?1:2;if(+el.dataset.s!==stg)redraw=true}});
+  if(redraw&&!document.querySelector('.fm-pop'))fDraw();
 }
-function fDrawPlot(el,p){
-  el.className='fm-plot';el.dataset.ready='0';
-  if(!p.c){el.innerHTML=`<span class="fm-plus">＋</span><span class="fm-seedhint">${FCROP[FSEL].e}</span>`;el.classList.add('empty');return}
-  const cr=FCROP[p.c],st=fStage(p);
-  if(st.pr>=1){el.dataset.ready='1';el.classList.add('ready');el.innerHTML=`<span class="fm-crop ripe" data-s="3">${cr.e}${cr.e}<br>${cr.e}</span><span class="fm-spark">✨</span>`;return}
-  const stg=st.pr<.34?0:st.pr<.7?1:2;
-  el.innerHTML=`<span class="fm-crop s${stg}" data-s="${stg}">${stg===0?'🌱':stg===1?'🌿':cr.e}</span>${p.w?'<span class="fm-wet">💧</span>':'<span class="fm-wbtn">💧</span>'}<span class="fm-tl">${fTime(st.left)}</span><span class="fm-pb"><i style="width:${st.pr*100}%"></i></span>`;
-}
+// ---- رسم الخريطة كلها ----
 function fDraw(){
-  $('#fmCoins').textContent=arDigits(F.coins);$('#fmLv').textContent=`مستوى ${arDigits(F.lvl)}`;
+  $('#fmCoins').textContent=arDigits(F.coins);$('#fmLv').textContent=arDigits(F.lvl);
   $('#fmXP').style.width=(F.lvl>=FMAXLV?100:Math.min(100,F.xp/fNeed(F.lvl)*100))+'%';
-  const fld=$('#fmField');fld.innerHTML='';
-  F.plots.forEach((p,i)=>{const el=document.createElement('button');el.dataset.i=i;fDrawPlot(el,p);el.onclick=e=>fPlotTap(i,el,e);fld.appendChild(el)});
-  if(F.plots.length<FPLOT_MAX){const el=document.createElement('button');el.className='fm-plot buy';el.innerHTML=`<span>🚧</span><small>أرض جديدة<br>🪙 ${arDigits(fPlotCost())}</small>`;el.onclick=()=>fBuyPlot(el);fld.appendChild(el)}
-  $('#fmSeeds').innerHTML=Object.entries(FCROP).map(([k,c])=>{const lock=c.lv>F.lvl;return`<button class="fm-seed${k===FSEL?' on':''}${lock?' lock':''}" data-k="${k}"><b>${lock?'🔒':c.e}</b><span>${c.n}</span><small>${lock?`مستوى ${arDigits(c.lv)}`:`🪙 ${arDigits(c.c)}`}</small></button>`}).join('');
-  $('#fmSeeds').querySelectorAll('.fm-seed').forEach(b=>b.onclick=()=>{const c=FCROP[b.dataset.k];if(c.lv>F.lvl){boop();speak([{say:FARM_SAY.lock}]);return}FSEL=b.dataset.k;tone([660],'sine',.05);fDraw()});
-  $('#fmDeco').innerHTML=F.deco.map((k,i)=>`<span class="fm-dc" style="--i:${i}">${FDECO[k].e}</span>`).join('');
-  fDrawBlds();fDrawInv();
   $('#fmTDot').hidden=!F.tasks.some(fCanDo);
+  const w=$('#fmWorld');FW=Math.min(w.clientWidth||360,620);w.style.height=FW*FM_H+'px';w.style.setProperty('--u',FW/100+'px');
+  const now=fNow(),dly=p=>`animation-delay:-${(now/1000)%p}s`;
+  let h=`<div class="fm-path" style="left:0;right:0;top:${fx(.255)};height:${fx(.045)}"></div><div class="fm-path" style="left:0;right:0;top:${fx(1.025)};height:${fx(.03)}"></div><div class="fm-path" style="left:0;right:0;top:${fx(1.43)};height:${fx(.03)}"></div><div class="fm-path" style="left:0;right:0;top:${fx(1.79)};height:${fx(.03)}"></div><div class="fm-path" style="left:${fx(.485)};width:${fx(.03)};top:${fx(.27)};height:${fx(1.55)}"></div>`;
+  FM_TREES.forEach(([x,y,e],i)=>h+=`<span class="fm-tree" style="left:${fx(x)};top:${fx(y)};${dly(5+i)}">${e}</span>`);
+  // البيت ولوحة الطلبات والمخزن
+  h+=`<button class="fm-b" id="fmHouse" style="left:${fx(.03)};top:${fx(.01)};width:${fx(.3)}">${FM_ART.house()}<em class="fm-lab">بيتي</em><span class="fm-smoke" style="${dly(3)}">💨</span></button>`;
+  h+=`<button class="fm-b" id="fmBoard" style="left:${fx(.37)};top:${fx(.02)};width:${fx(.27)}">${FM_ART.board()}<em class="fm-lab">الطلبات</em><span class="fm-truck">🚚</span>${F.tasks.some(fCanDo)?'<span class="fm-bub ready">✅</span>':''}</button>`;
+  h+=`<button class="fm-b" id="fmSilo" style="left:${fx(.67)};top:${fx(.0)};width:${fx(.32)}">${FM_ART.silo()}<em class="fm-lab">المخزن</em></button>`;
+  // الأرض الزراعية
+  for(let i=0;i<FPLOT_MAX;i++){const col=i%4,row=Math.floor(i/4),L=.04+col*.235,T=.33+row*.225,S=.215;
+    if(i<F.plots.length){const p=F.plots[i];h+=`<button class="fm-plot" data-i="${i}" ${fPlotInner(p)} style="left:${fx(L)};top:${fx(T)};width:${fx(S)};height:${fx(S*.92)}">${FM_ART.soil()}${fPlotBody(p)}</button>`}
+    else if(i===F.plots.length)h+=`<button class="fm-plot buy" id="fmBuyPlot" style="left:${fx(L)};top:${fx(T)};width:${fx(S)};height:${fx(S*.92)}"><span>🚧</span><small>أرض جديدة<br>🪙 ${arDigits(fPlotCost())}</small></button>`;
+    else h+=`<span class="fm-plot wild" style="left:${fx(L)};top:${fx(T)};width:${fx(S)};height:${fx(S*.92)}">🌾</span>`}
+  // الحظاير
+  for(const k in FM_PEN){const [L,T,W,H]=FM_PEN[k],b=FBLD[k],own=F.bld[k];
+    h+=`<div class="fm-pen${own?'':' lock'}" data-k="${k}" style="left:${fx(L)};top:${fx(T)};width:${fx(W)};height:${fx(H)};--pg:${FM_PENBG[k]}">`;
+    if(!own){h+=`<button class="fm-b fm-lockb" data-k="${k}" style="left:22%;top:8%;width:56%">${FM_ART.lock()}<span class="fm-ghost">${b.e}</span><em class="fm-lab">${b.n}</em><span class="fm-sign">${b.lv>F.lvl?`🔒 مستوى ${arDigits(b.lv)}`:`🔨 🪙 ${arDigits(b.c)}`}</span></button></div>`;continue}
+    h+=`<button class="fm-b fm-shed" data-k="${k}" style="left:2%;top:-7%;width:36%">${FM_ART[k]()}</button><em class="fm-penlab">${b.n}</em>`;
+    const n=own.a.length,slots=k==='bees'?[[62,28],[84,58],[46,72]]:[[64,30],[86,50],[30,74],[64,76]];
+    own.a.forEach((a,j)=>{const[x,y]=slots[j],st=!a.t0?'hungry':fLeft(a.t0,b.t)>0?'busy':'ready';
+      h+=`<button class="fm-an ${st}" data-k="${k}" data-j="${j}" style="left:${x}%;top:${y}%;${dly(6+j)}"><span class="fm-ae" style="${dly(4+j*1.3)}">${b.an}</span>${st==='hungry'?`<span class="fm-bub feed">${FITEM(b.feed).e}</span>`:st==='busy'?fRing(a.t0,b.t):`<span class="fm-bub ready">${FPROD[b.out].e}</span>`}</button>`});
+    if(n<b.max){const[x,y]=slots[n];h+=`<button class="fm-addan" data-k="${k}" style="left:${x}%;top:${y}%">＋${b.an}<small>🪙${arDigits(fAnCost(k))}</small></button>`}
+    h+=`</div>`}
+  // المصانع
+  for(const k in FM_FAC){const[x,y]=FM_FAC[k],b=FBLD[k],own=F.bld[k],L=x-.15,T=y-.13;
+    if(!own){h+=`<button class="fm-b fm-lockb" data-k="${k}" style="left:${fx(L)};top:${fx(T)};width:${fx(.3)}">${FM_ART.lock()}<span class="fm-ghost">${b.e}</span><em class="fm-lab">${b.n}</em><span class="fm-sign">${b.lv>F.lvl?`🔒 مستوى ${arDigits(b.lv)}`:`🔨 🪙 ${arDigits(b.c)}`}</span></button>`;continue}
+    const st=!own.t0?'idle':fLeft(own.t0,b.t)>0?'busy':'ready';
+    h+=`<button class="fm-b fm-fac ${st}" data-k="${k}" style="left:${fx(L)};top:${fx(T)};width:${fx(.3)}">${FM_ART[k]()}<span class="fm-badge">${FPROD[b.out].e}</span><em class="fm-lab">${b.n}</em>${st==='busy'?`<span class="fm-smoke on" style="${dly(2)}">💨</span>${fRing(own.t0,b.t)}`:st==='ready'?`<span class="fm-bub ready">${FPROD[b.out].e}</span>`:''}</button>`}
+  h+=`<div class="fm-path" style="left:0;right:0;top:${fx(2.19)};height:${fx(.03)}"></div><div class="fm-pond" style="left:${fx(.6)};top:${fx(2.25)};width:${fx(.34)};height:${fx(.16)}"><span class="fm-duck" style="${dly(9)}">🦆</span></div>`;
+  // السوق
+  h+=`<button class="fm-b" id="fmStall" style="left:${fx(.58)};top:${fx(1.86)};width:${fx(.34)}">${FM_ART.stall()}<span class="fm-goods">🥕🌽🍓</span><em class="fm-lab">السوق</em></button>`;
+  // الزينة
+  F.deco.slice(0,FM_DECO.length).forEach((k,i)=>{const[x,y]=FM_DECO[i];h+=`<span class="fm-dc" style="left:${fx(x)};top:${fx(y)};${dly(4+i)}">${FDECO[k].e}</span>`});
+  w.innerHTML=h;
+  // الأحداث
+  $('#fmHouse').onclick=e=>{e.stopPropagation();const p=fPop($('#fmHouse'),`<b>🏡 بيت المزرعة</b><p>مستوى المزرعة ${arDigits(F.lvl)} · خلّصت ${arDigits(F.done)} طلب</p>`);};
+  $('#fmBoard').onclick=e=>{e.stopPropagation();fTasks()};
+  $('#fmSilo').onclick=e=>{e.stopPropagation();fInvSheet()};
+  $('#fmStall').onclick=e=>{e.stopPropagation();fMarket()};
+  const bp=$('#fmBuyPlot');if(bp)bp.onclick=e=>{e.stopPropagation();fBuyPlot(bp)};
+  w.querySelectorAll('.fm-plot[data-i]').forEach(el=>el.onclick=e=>{e.stopPropagation();fPlotTap(+el.dataset.i,el)});
+  w.querySelectorAll('.fm-lockb').forEach(el=>el.onclick=e=>{e.stopPropagation();fLockTap(el.dataset.k,el)});
+  w.querySelectorAll('.fm-an').forEach(el=>el.onclick=e=>{e.stopPropagation();fAnTap(el.dataset.k,+el.dataset.j,el)});
+  w.querySelectorAll('.fm-shed').forEach(el=>el.onclick=e=>{e.stopPropagation();fShedTap(el.dataset.k,el)});
+  w.querySelectorAll('.fm-addan').forEach(el=>el.onclick=e=>{e.stopPropagation();fAddAnimal(el.dataset.k,el)});
+  w.querySelectorAll('.fm-fac').forEach(el=>el.onclick=e=>{e.stopPropagation();fFacTap(el.dataset.k,el)});
 }
-function fDrawBlds(){
-  const box=$('#fmBlds');box.innerHTML=Object.entries(FBLD).map(([k,b])=>{
-    const own=F.bld[k],st=own&&own.t0?Math.ceil(b.t-(fNow()-own.t0)/1000):null;let cls='fm-bld',body;
-    if(!own){cls+=b.lv>F.lvl?' lock':' buyable';body=`<small>${b.lv>F.lvl?`🔒 مستوى ${arDigits(b.lv)}`:`🔨 🪙 ${arDigits(b.c)}`}</small>`}
-    else if(st===null)body=`<small class="fm-in">${Object.entries(b.in).map(([i,q])=>`${FITEM(i).e}×${arDigits(q)}`).join(' ')} ← ${FPROD[b.out].e}</small>`;
-    else if(st>0){cls+=' busy';body=`<small class="fm-tl">${fTime(st)}</small>`}
-    else{cls+=' ready';body=`<span class="fm-out">${FPROD[b.out].e}</span><small>جاهز!</small>`}
-    return`<button class="${cls}" data-k="${k}" data-ready="${st!==null&&st<=0?1:0}"><b>${b.e}</b><span>${b.n}</span>${body}</button>`}).join('');
-  box.querySelectorAll('.fm-bld').forEach(el=>el.onclick=()=>fBldTap(el.dataset.k,el));
+function fPlotInner(p){if(!p.c)return'data-s="-1"';const st=fStage(p);return`data-s="${st.pr>=1?3:st.pr<.34?0:st.pr<.7?1:2}"`}
+function fPlotBody(p){
+  if(!p.c)return`<span class="fm-empty">＋</span>`;
+  const cr=FCROP[p.c],st=fStage(p);
+  if(st.pr>=1)return`<span class="fm-crops ripe">${[0,1,2,3,4,5].map(i=>`<i style="--i:${i}">${cr.e}</i>`).join('')}</span><span class="fm-bub ready sm">🧺</span>`;
+  const stg=st.pr<.34?0:st.pr<.7?1:2;
+  return`<span class="fm-crops s${stg}">${[0,1,2,3,4,5].map(i=>`<i style="--i:${i}">${stg===0?'🌱':stg===1?'🌿':cr.e}</i>`).join('')}</span>${p.w?'':'<span class="fm-drop">💧</span>'}${fRing(p.t0,p.w?cr.t:cr.t)}`;
 }
-function fDrawInv(){
-  const ks=Object.keys(F.inv).filter(k=>F.inv[k]>0);
-  $('#fmInv').innerHTML=ks.length?ks.map(k=>`<span class="fm-it"><b>${FITEM(k).e}</b>${arDigits(F.inv[k])}</span>`).join(''):'<p class="fm-empty">المخزن فاضي، ازرع واحصد 🌱</p>';
-}
-function fPlotTap(i,el,e){
+// ---- الأرض ----
+function fPlant(i,k){const p=F.plots[i],c=FCROP[k];if(F.coins<c.c)return false;F.coins-=c.c;p.c=k;p.t0=fNow();p.w=0;return true}
+function fPlotTap(i,el){
   const p=F.plots[i];
-  if(!p.c){const c=FCROP[FSEL];if(F.coins<c.c){boop();speak([{say:gs(FARM_SAY.coins)}]);return}
-    F.coins-=c.c;p.c=FSEL;p.t0=fNow();p.w=0;fSave();tone([392,523],'triangle',.07);fFloat(el,`-${arDigits(c.c)} 🪙`);fDraw();return}
-  const st=fStage(p);
-  if(st.pr>=1){const cr=FCROP[p.c],q=2;F.inv[p.c]=(F.inv[p.c]||0)+q;p.c=null;p.t0=0;p.w=0;fAddXP(cr.x);fSave();
-    tone([523,784,1047],'sine',.07);fFloat(el,`+${arDigits(q)} ${cr.e}`);
+  if(!p.c){
+    const seeds=Object.entries(FCROP);
+    const pop=fPop(el,`<b>🌱 تزرع إيه؟</b><div class="fm-seedg">${seeds.map(([k,c])=>{const lock=c.lv>F.lvl;return`<button class="fm-sd${lock?' lock':''}${k===FSEL?' on':''}" data-k="${k}"><b>${lock?'🔒':c.e}</b><span>${c.n}</span><small>${lock?`مستوى ${arDigits(c.lv)}`:`🪙${arDigits(c.c)} · ${fTime(c.t)}`}</small></button>`}).join('')}</div>
+      <button class="fm-all">🌱 ازرع الأرض الفاضية كلها</button>`);
+    pop.querySelectorAll('.fm-sd').forEach(b=>b.onclick=()=>{const k=b.dataset.k,c=FCROP[k];if(c.lv>F.lvl){boop();speak([{say:FARM_SAY.lock}]);return}
+      FSEL=k;if(!fPlant(i,k)){boop();speak([{say:gs(FARM_SAY.coins)}]);return}fSave();tone([392,523],'triangle',.07);fPopClose();fDraw();
+      const ne=document.querySelector(`.fm-plot[data-i="${i}"]`);fFloat(ne,`-${arDigits(c.c)} 🪙`)});
+    pop.querySelector('.fm-all').onclick=()=>{let n=0;F.plots.forEach((q,j)=>{if(!q.c&&fPlant(j,FSEL))n++});
+      if(!n){boop();speak([{say:gs(FARM_SAY.coins)}]);return}fSave();tone([392,523,659],'triangle',.07);fPopClose();fDraw()};
+    return}
+  const st=fStage(p),cr=FCROP[p.c];
+  if(st.pr>=1){const q=2;F.inv[p.c]=(F.inv[p.c]||0)+q;p.c=null;p.t0=0;p.w=0;fAddXP(cr.x);fSave();
+    tone([523,784,1047],'sine',.07);fFloat(el,`+${arDigits(q)} ${cr.e}`);fFly(el,cr.e);
     if(Math.random()<.35)speak([{say:gs(FARM_SAY.harvest)}],false);fDraw();return}
-  if(!p.w){p.w=1;const cr=FCROP[p.c],left=cr.t*1000-(fNow()-p.t0);p.t0-=left/2;fSave();tone([880,660,990],'sine',.06);
-    el.classList.add('watering');speak([{say:FARM_SAY.water}],false);setTimeout(()=>fDrawPlot(el,p),700);return}
-  tone([440],'sine',.05);
+  if(!p.w){p.w=1;const left=cr.t*1000-(fNow()-p.t0);p.t0-=left/2;fSave();tone([880,660,990],'sine',.06);
+    el.classList.add('watering');speak([{say:FARM_SAY.water}],false);setTimeout(fDraw,700);return}
+  fPop(el,`<b>${cr.e} ${cr.n}</b><p>فاضل ${fTime(st.left)} ويطلع ⏳</p>`);tone([440],'sine',.05);
 }
 const fPlotCost=()=>20+(F.plots.length-6)*25;
 function fBuyPlot(el){const c=fPlotCost();if(F.coins<c){boop();speak([{say:gs(FARM_SAY.coins)}]);return}
   F.coins-=c;F.plots.push({c:null,t0:0,w:0});fAddXP(3);fSave();ding();fFloat(el,`-${arDigits(c)} 🪙`);speak([{say:gs(FARM_SAY.plot)}]);fDraw()}
 function fHas(need){return Object.entries(need).every(([k,q])=>(F.inv[k]||0)>=q)}
-function fBldTap(k,el){
-  const b=FBLD[k],own=F.bld[k];
-  if(!own){if(b.lv>F.lvl){boop();speak([{say:FARM_SAY.lock}]);return}fBuild(k,el);return}
-  if(own.t0){const left=b.t-(fNow()-own.t0)/1000;
-    if(left<=0){F.inv[b.out]=(F.inv[b.out]||0)+1;own.t0=0;fAddXP(FPROD[b.out].x);fSave();tone([523,784,1047],'sine',.07);fFloat(el,`+١ ${FPROD[b.out].e}`);fDraw()}
-    else tone([440],'sine',.05);return}
-  if(!fHas(b.in)){boop();speak([{say:gs(FARM_SAY.need)}]);el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake');return}
-  for(const[i,q]of Object.entries(b.in))F.inv[i]-=q;own.t0=fNow();fSave();tone([392,494,587],'triangle',.07);speak([{say:FARM_SAY.feed}],false);fDraw();
-}
+// ---- البناء ----
+function fLockTap(k,el){const b=FBLD[k];
+  if(b.lv>F.lvl){boop();speak([{say:FARM_SAY.lock}]);fPop(el,`<b>${b.e} ${b.n}</b><p>🔒 بيتفتح في مستوى ${arDigits(b.lv)}</p>`);return}
+  const pop=fPop(el,`<b>${b.e} ${b.n}</b><p>${b.type==='pen'?`فيها ${b.an} بياكل ${FITEM(b.feed).e} ويدّيك ${FPROD[b.out].e}`:`بيعمل ${FPROD[b.out].e} من ${Object.entries(b.in).map(([i,q])=>FITEM(i).e+'×'+arDigits(q)).join(' ')}`}</p><button class="fm-go">🔨 ابنيها بـ 🪙 ${arDigits(b.c)}</button>`);
+  pop.querySelector('.fm-go').onclick=()=>{fPopClose();fBuild(k,el)}}
 function fBuild(k,el){const b=FBLD[k];if(F.coins<b.c){boop();speak([{say:gs(FARM_SAY.coins)}]);return}
-  F.coins-=b.c;F.bld[k]={t0:0};fAddXP(10);fSave();ding();if(el)confetti(el);speak([{say:gs(FARM_SAY.build)}]);fDraw()}
+  F.coins-=b.c;F.bld[k]=b.type==='pen'?{a:[{t0:0},{t0:0}]}:{t0:0};fAddXP(10);fSave();
+  if(el){el.innerHTML='<span class="fm-build">🏗️</span>';el.classList.add('building')}tone([392,330,392,523],'square',.08);
+  setTimeout(()=>{fDraw();ding();const ne=document.querySelector(`[data-k="${k}"]`);if(ne)confetti(ne);speak([{say:gs(FARM_SAY.build)}])},1300)}
+// ---- الحيوانات ----
+const fAnCost=k=>FBLD[k].ac*(F.bld[k].a.length-1);
+function fAddAnimal(k,el){const b=FBLD[k],c=fAnCost(k);if(F.coins<c){boop();speak([{say:gs(FARM_SAY.coins)}]);return}
+  F.coins-=c;F.bld[k].a.push({t0:0});fAddXP(4);fSave();ding();fFloat(el,`-${arDigits(c)} 🪙`);fDraw()}
+function fAnTap(k,j,el){const b=FBLD[k],a=F.bld[k].a[j];
+  if(!a.t0){if((F.inv[b.feed]||0)<1){boop();speak([{say:gs(FARM_SAY.need)}]);fPop(el,`<b>${b.an} جعان!</b><p>محتاج ${FITEM(b.feed).e} ${FITEM(b.feed).n}. ازرعه واحصده الأول 🌱</p>`);return}
+    F.inv[b.feed]--;a.t0=fNow();fSave();tone([392,494,587],'triangle',.07);fFloat(el,`-١ ${FITEM(b.feed).e}`);speak([{say:FARM_SAY.feed}],false);fDraw();return}
+  const left=fLeft(a.t0,b.t);
+  if(left>0){fPop(el,`<b>${b.an} بياكل 😋</b><p>${FPROD[b.out].e} هيجهز بعد ${fTime(left)}</p>`);tone([440],'sine',.05);return}
+  F.inv[b.out]=(F.inv[b.out]||0)+1;a.t0=0;fAddXP(FPROD[b.out].x);fSave();tone([523,784,1047],'sine',.07);fFloat(el,`+١ ${FPROD[b.out].e}`);fFly(el,FPROD[b.out].e);
+  if(Math.random()<.4)speak([{say:gs(FARM_SAY.product)}],false);fDraw()}
+// الضغط على الحظيرة نفسها: يلمّ كل الجاهز ويأكّل كل الجعانين
+function fShedTap(k,el){const b=FBLD[k],own=F.bld[k];let got=0,fed=0,miss=0;
+  own.a.forEach(a=>{if(a.t0&&fLeft(a.t0,b.t)<=0){F.inv[b.out]=(F.inv[b.out]||0)+1;a.t0=0;fAddXP(FPROD[b.out].x);got++}});
+  own.a.forEach(a=>{if(!a.t0){if((F.inv[b.feed]||0)>0){F.inv[b.feed]--;a.t0=fNow();fed++}else miss++}});
+  if(!got&&!fed){if(miss){boop();speak([{say:gs(FARM_SAY.need)}]);fPop(el,`<b>${b.n}</b><p>محتاج ${FITEM(b.feed).e} ${FITEM(b.feed).n} عشان تأكّلهم</p>`)}else fPop(el,`<b>${b.n}</b><p>كلهم بياكلوا دلوقتي 😋</p>`);return}
+  fSave();if(got){fFloat(el,`+${arDigits(got)} ${FPROD[b.out].e}`);fFly(el,FPROD[b.out].e);tone([523,784,1047],'sine',.07)}else tone([392,494,587],'triangle',.07);
+  if(fed)speak([{say:FARM_SAY.feed}],false);fDraw()}
+// ---- المصانع ----
+function fFacTap(k,el){const b=FBLD[k],own=F.bld[k];
+  if(own.t0){const left=fLeft(own.t0,b.t);
+    if(left<=0){F.inv[b.out]=(F.inv[b.out]||0)+1;own.t0=0;fAddXP(FPROD[b.out].x);fSave();tone([523,784,1047],'sine',.07);fFloat(el,`+١ ${FPROD[b.out].e}`);fFly(el,FPROD[b.out].e);fDraw()}
+    else{fPop(el,`<b>${b.n} شغّال ⚙️</b><p>${FPROD[b.out].e} هيجهز بعد ${fTime(left)}</p>`);tone([440],'sine',.05)}return}
+  const ok=fHas(b.in);
+  const pop=fPop(el,`<b>${b.e} ${b.n}</b><div class="fm-rec">${Object.entries(b.in).map(([i,q])=>`<span class="${(F.inv[i]||0)>=q?'have':'miss'}">${FITEM(i).e} ${arDigits(Math.min(F.inv[i]||0,q))}/${arDigits(q)}</span>`).join('')}<em>←</em><span class="out">${FPROD[b.out].e}</span></div><p>⏱️ ${fTime(b.t)}</p><button class="fm-go"${ok?'':' disabled'}>${ok?'▶ ابدأ الشغل':'محتاج حاجات الأول'}</button>`);
+  pop.querySelector('.fm-go').onclick=()=>{if(!fHas(b.in)){boop();speak([{say:gs(FARM_SAY.need)}]);return}
+    for(const[i,q]of Object.entries(b.in))F.inv[i]-=q;own.t0=fNow();fSave();fPopClose();tone([392,494,587],'triangle',.07);fDraw()}}
+// ---- المخزن ----
+function fInvSheet(){const ks=Object.keys(F.inv).filter(k=>F.inv[k]>0);
+  const ov=fSheet('📦 المخزن',ks.length?`<div class="fm-invg">${ks.map(k=>`<span class="fm-it"><b>${FITEM(k).e}</b>${FITEM(k).n}<em>${arDigits(F.inv[k])}</em></span>`).join('')}</div><button class="btn2 c-coral fm-tomk">💰 بيع في السوق</button>`:'<p class="fm-empty2">المخزن فاضي، ازرع واحصد 🌱</p>');
+  const m=ov.querySelector('.fm-tomk');if(m)m.onclick=()=>{ov.remove();fMarket()}}
 function fSheet(title,html){
   const ov=document.createElement('div');ov.className='fm-sheet';ov.innerHTML=`<div class="card"><div class="fm-sh-h"><b>${title}</b><button class="fm-x" aria-label="اقفل">✕</button></div><div class="fm-sh-b">${html}</div></div>`;
   document.body.appendChild(ov);ov.querySelector('.fm-x').onclick=()=>ov.remove();ov.onclick=e=>{if(e.target===ov)ov.remove()};return ov;
@@ -3221,13 +3429,17 @@ function fTasks(){
 }
 function fShop(){
   const row=(k,o,kind)=>{const own=kind==='b'?!!F.bld[k]:F.deco.filter(x=>x===k).length,lock=o.lv>F.lvl;
-    return`<div class="fm-shop${lock?' lock':''}"><b>${lock?'🔒':o.e}</b><span>${o.n}${kind==='b'?`<small>${Object.entries(o.in).map(([i,q])=>FITEM(i).e+'×'+arDigits(q)).join(' ')} ← ${FPROD[o.out].e}</small>`:`<small>+${arDigits(o.x)} خبرة${own?` · عندك ${arDigits(own)}`:''}</small>`}</span>${lock?`<em>مستوى ${arDigits(o.lv)}</em>`:kind==='b'&&own?'<em>✓ اتبنى</em>':`<button class="btn2 c-sun fm-buy" data-k="${k}" data-t="${kind}">🪙 ${arDigits(o.c)}</button>`}</div>`};
-  const ov=fSheet('🔨 ابني وزيّن',`<p class="fm-sub">المباني بتعمل منتجات</p>${Object.entries(FBLD).map(([k,o])=>row(k,o,'b')).join('')}<p class="fm-sub">الزينة بتدّيك خبرة وتحلّي المزرعة</p>${Object.entries(FDECO).map(([k,o])=>row(k,o,'d')).join('')}`);
+    const info=kind==='b'?(o.type==='pen'?`${o.an} بياكل ${FITEM(o.feed).e} ← ${FPROD[o.out].e}`:`${Object.entries(o.in).map(([i,q])=>FITEM(i).e+'×'+arDigits(q)).join(' ')} ← ${FPROD[o.out].e}`):`+${arDigits(o.x)} خبرة${own?` · عندك ${arDigits(own)}`:''}`;
+    return`<div class="fm-shop${lock?' lock':''}"><b>${lock?'🔒':o.e}</b><span>${o.n}<small>${info}</small></span>${lock?`<em>مستوى ${arDigits(o.lv)}</em>`:kind==='b'&&own?`<button class="btn2 c-teal fm-see" data-k="${k}">👀 شوفها</button>`:`<button class="btn2 c-sun fm-buy" data-k="${k}" data-t="${kind}">🪙 ${arDigits(o.c)}</button>`}</div>`};
+  const ov=fSheet('🔨 ابني وزيّن',`<p class="fm-sub">المباني بتبان في المزرعة، والحيوانات بتاكل وتدّيك منتجات</p>${Object.entries(FBLD).map(([k,o])=>row(k,o,'b')).join('')}<p class="fm-sub">الزينة بتتحط في المزرعة وبتدّيك خبرة</p>${Object.entries(FDECO).map(([k,o])=>row(k,o,'d')).join('')}`);
+  const goTo=k=>{ov.remove();const el=document.querySelector(`#fmWorld [data-k="${k}"]`);if(el){el.scrollIntoView({block:'center',behavior:'smooth'});setTimeout(()=>{el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash')},400)}return el};
+  ov.querySelectorAll('.fm-see').forEach(b=>b.onclick=()=>goTo(b.dataset.k));
   ov.querySelectorAll('.fm-buy').forEach(b=>b.onclick=()=>{const k=b.dataset.k;
-    if(b.dataset.t==='b'){ov.remove();fBuild(k,null);return}
+    if(b.dataset.t==='b'){const o=FBLD[k];if(F.coins<o.c){boop();speak([{say:gs(FARM_SAY.coins)}]);return}const el=goTo(k);setTimeout(()=>fBuild(k,el),500);return}
     const o=FDECO[k];if(F.coins<o.c){boop();speak([{say:gs(FARM_SAY.coins)}]);return}
-    if(F.deco.length>=24){boop();return}
-    F.coins-=o.c;F.deco.push(k);fAddXP(o.x);fSave();ding();speak([{say:gs(FARM_SAY.build)}]);ov.remove();fDraw()});
+    if(F.deco.length>=FM_DECO.length){boop();return}
+    F.coins-=o.c;F.deco.push(k);fAddXP(o.x);fSave();ding();speak([{say:gs(FARM_SAY.build)}]);ov.remove();fDraw();
+    const d=document.querySelectorAll('#fmWorld .fm-dc');const last=d[d.length-1];if(last){last.scrollIntoView({block:'center',behavior:'smooth'});last.classList.add('flash')}});
 }
 function fMarket(){
   const ks=Object.keys(F.inv).filter(k=>F.inv[k]>0);
@@ -3236,8 +3448,6 @@ function fMarket(){
   ov.querySelectorAll('.fm-s1').forEach(b=>b.onclick=()=>sell(b.dataset.k,1,b));
   ov.querySelectorAll('.fm-sa').forEach(b=>b.onclick=()=>sell(b.dataset.k,99,b));
 }
-
-
 /* ---------- الرياضيات: جمع وطرح وضرب وقسمة، عربي وإنجليزي ---------- */
 const MA_U=['صِفْر','واحِد','اِتْنِين','تَلاتَة','أَرْبَعَة','خَمْسَة','سِتَّة','سَبْعَة','تَمانْيَة','تِسْعَة','عَشَرَة','حِداشَر','اِتْناشَر','تَلَتّاشَر','أَرْبَعْتاشَر','خَمَسْتاشَر','سِتّاشَر','سَبَعْتاشَر','تَمَنْتاشَر','تِسَعْتاشَر'];
 const MA_T=['','','عِشْرِين','تَلاتِين','أَرْبِعِين','خَمْسِين','سِتِّين','سَبْعِين','تَمانِين','تِسْعِين'];
