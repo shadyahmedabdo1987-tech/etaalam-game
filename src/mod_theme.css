@@ -1,0 +1,83 @@
+/* ---------- ثيم الألعاب: خلفية مرسومة وأزرار مجسّمة لامعة بحدود غامقة ---------- */
+:root{--card:#FFFDF6;--card2:#FFF4DC;--rim:#EBCB92;--rim-d:#C9944E;--wood:#B9773D;--wood-d:#7A4A22}
+body{background:#BFE6FF}
+.app{background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 160' preserveAspectRatio='none'%3E%3Cpath d='M0 70Q60 20 130 55T260 50 400 40V160H0Z' fill='%239AD87A'/%3E%3Cpath d='M0 105Q90 60 190 95T400 80V160H0Z' fill='%237CC65C'/%3E%3Cpath d='M0 135Q120 105 240 128T400 118V160H0Z' fill='%2366B84A'/%3E%3C/svg%3E") bottom/100% 34% no-repeat,
+  radial-gradient(ellipse 90px 26px at 18% 34%,#fff 60%,transparent 62%),radial-gradient(ellipse 60px 20px at 25% 31%,#fff 60%,transparent 62%),
+  radial-gradient(ellipse 110px 28px at 80% 52%,#ffffffd9 60%,transparent 62%),radial-gradient(ellipse 70px 22px at 72% 49%,#ffffffd9 60%,transparent 62%),
+  linear-gradient(180deg,#7CCBFF 0%,#BFE6FF 45%,#E6F7FF 70%)}
+main{background:none}
+/* الهيدر */
+.hero{background:linear-gradient(180deg,#7A66F2,#5B47E0 55%,#4B38CF);border:3px solid #2E1F96;border-top:0;box-shadow:inset 0 -5px 0 rgba(0,0,0,.12),0 6px 0 #2E1F96,0 12px 22px rgba(30,20,110,.3)}
+.ibtn{background:linear-gradient(180deg,#FFE27A,#FFB21E);color:#6B3F00;border:2.5px solid #A65F00;box-shadow:inset 0 3px 0 rgba(255,255,255,.6),0 4px 0 #8A4E00}
+.ibtn:active{transform:translateY(3px);box-shadow:inset 0 3px 0 rgba(255,255,255,.6),0 1px 0 #8A4E00}
+.chip{background:rgba(20,10,80,.35);border:2px solid rgba(255,255,255,.35);box-shadow:inset 0 2px 4px rgba(0,0,0,.25)}
+.avatar{border:4px solid #FFD54A;box-shadow:0 0 0 3px #2E1F96,0 8px 18px rgba(20,10,80,.35)}
+.bubble{border:3px solid #2E1F96;box-shadow:0 4px 0 rgba(46,31,150,.45)}
+.bubble::before{inset-inline-start:-12px}
+.say-again{background:linear-gradient(180deg,#9EE37A,#3FAF3A);color:#fff;border:2px solid #24661F;box-shadow:0 3px 0 #1C4F18}
+/* الأزرار الملوّنة */
+.btn2,.cta,.go,.fm-go,.fm-all,.ln-lt,.gbtn[aria-pressed="true"]{border:2.5px solid rgba(0,0,0,.32);text-shadow:0 2px 0 rgba(0,0,0,.25);position:relative}
+.btn2{background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,.08) 46%,rgba(0,0,0,.06) 54%,rgba(0,0,0,0)),var(--c);box-shadow:inset 0 2px 0 rgba(255,255,255,.55),0 5px 0 var(--cd),0 8px 12px rgba(0,0,0,.18)}
+.btn2:active{transform:translateY(3px);box-shadow:inset 0 2px 0 rgba(255,255,255,.55),0 2px 0 var(--cd)}
+.cta{background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,.08) 46%,rgba(0,0,0,.06) 54%,rgba(0,0,0,0)),var(--coral);box-shadow:inset 0 2px 0 rgba(255,255,255,.55),0 6px 0 var(--coral-d),0 10px 14px rgba(0,0,0,.2)}
+.fm-go,.fm-all{box-shadow:inset 0 2px 0 rgba(255,255,255,.55),0 4px 0 #148A55}
+/* أيقونات الأقسام */
+.ico{border:3px solid var(--cd);box-shadow:inset 0 4px 0 rgba(255,255,255,.55),inset 0 -8px 14px rgba(0,0,0,.18),0 7px 0 var(--cd),0 12px 16px rgba(30,20,90,.25)!important}
+.appicon .lbl{color:#fff;text-shadow:0 2px 0 #2E1F96,0 0 2px #2E1F96,1px 1px 0 #2E1F96,-1px -1px 0 #2E1F96,1px -1px 0 #2E1F96,-1px 1px 0 #2E1F96;font-size:clamp(1rem,4.2vw,1.2rem)}
+.appicon .sub{color:#2E1F96}
+.games-runs{color:#2E1F96;background:#ffffffd0;border:2px solid #fff;border-radius:999px;padding:4px 16px}
+/* الكروت والألواح: ورق كريمي بإطار دهبي */
+.panel,.choice,.ln-card,.ln-opt,.ln-qtxt,.ln-sent,.ln-wpic,.ln-pc,.ln-li,.ln-adh,.ln-pat,.ln-mapbox,.ln-item,.ln-cset>div,.ln-syl,.ln-stxt,.ln-lbtn,.ln-listen,.ln-mc .b,.daily-box{
+  background:linear-gradient(180deg,var(--card),var(--card2));border:3px solid var(--rim);box-shadow:inset 0 2px 0 #fff,0 5px 0 var(--rim-d),0 9px 14px rgba(90,50,10,.15)}
+.ln-card:active,.ln-opt:active,.ln-lbtn:active,.choice:active{box-shadow:inset 0 2px 0 #fff,0 2px 0 var(--rim-d)}
+.ln-opt.ok{background:linear-gradient(180deg,#6EE7A4,var(--ok));border-color:var(--ok-d);box-shadow:inset 0 2px 0 rgba(255,255,255,.5),0 6px 0 var(--ok-d)}
+.ln-opt.no{background:#FFE3E1;border-color:#F3B1AA}
+.ln-syl.rd{background:linear-gradient(180deg,#FFF7D0,#FFE48A);border-color:#E7B92E}
+.ln-mc .f{border:3px solid #2E1F96}
+.ln-mc.done .b{background:linear-gradient(180deg,#EFFFF5,#CFF5DD);border-color:#8FD6AE}
+.card{border:3px solid var(--rim);box-shadow:inset 0 2px 0 #fff,0 6px 0 var(--rim-d),0 10px 16px rgba(90,50,10,.15)}
+.ln-instr,.ln-note,.hint{color:#3A3070}
+.ln-dots i{border:2px solid #fff;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.tabbar{background:linear-gradient(180deg,#C98A4B,#A86B32);border-top:3px solid #6E4122}
+.tab{color:#FFF4DC;text-shadow:0 1px 0 rgba(0,0,0,.35)}
+.tab[aria-selected="true"],.tab.on{background:linear-gradient(180deg,#FFE27A,#FFB21E);color:#6B3F00;border:2px solid #A65F00;text-shadow:none;box-shadow:inset 0 2px 0 rgba(255,255,255,.6),0 3px 0 #8A4E00}
+/* اللوحات اللي بتطلع من تحت والنوافذ */
+.fm-sheet .card,.pr-gate .card{background:linear-gradient(180deg,#FFFDF6,#FFF1D4);border:4px solid var(--wood);box-shadow:inset 0 0 0 3px #F6DDAE,0 8px 0 var(--wood-d)}
+.fm-pop{background:linear-gradient(180deg,#FFFDF6,#FFF1D4);border:3px solid var(--wood);box-shadow:0 5px 0 var(--wood-d),0 12px 26px rgba(0,0,0,.3)}
+.fm-pop::after{border-top-color:var(--wood)}.fm-pop.below::after{border-bottom-color:var(--wood)}
+.overlay{background:radial-gradient(circle at 50% 40%,rgba(60,40,140,.55),rgba(20,12,60,.78))}
+.overlay .big{text-shadow:0 3px 0 rgba(0,0,0,.35)}
+/* ---------- الشطرنج: لوح خشب وقطع مجسّمة ---------- */
+.ch-wrap{padding:12px;border-radius:18px;background:repeating-linear-gradient(100deg,rgba(255,255,255,.06) 0 3px,transparent 3px 11px),linear-gradient(180deg,#8A5530,#5E3519);border:3px solid #3E220E;box-shadow:inset 0 3px 0 rgba(255,255,255,.25),inset 0 -4px 0 rgba(0,0,0,.25),0 8px 0 #3E220E,0 16px 26px rgba(0,0,0,.3)}
+.ch-board{border-radius:6px;box-shadow:0 0 0 3px #2E1808}
+.ch-board .sq.l{background:linear-gradient(135deg,#F7E8CB,#EBD3A8)}
+.ch-board .sq.d{background:linear-gradient(135deg,#BF8F5E,#A87745)}
+.ch-board .pc{display:block;width:96%;height:96%;font-size:0}
+.ch-board .pc svg,.ch-caps svg{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 3px 2px rgba(0,0,0,.35))}
+.ch-caps span{display:inline-block;width:24px;height:24px}
+.chp{stroke-width:1.3;stroke-linejoin:round}
+.w .chp,.ch-caps .w .chp{fill:url(#chW);stroke:#6B5236}
+.b .chp,.ch-caps .b .chp{fill:url(#chB);stroke:#0B0806}
+.w .chl{stroke:#A88B62}.b .chl{stroke:#6E625A}
+.chh{fill:#fff;opacity:.45}.b .chh{opacity:.22}
+.ch-lvl{border:2px solid #2E1F96}
+.ch-st{color:#2E1F96;background:#ffffffd0;border-radius:999px;padding:2px 12px}
+/* ---------- المكعبات: لوح خشب وبلوكات لامعة ---------- */
+.bb-wrap{padding:10px;background:repeating-linear-gradient(100deg,rgba(255,255,255,.06) 0 3px,transparent 3px 11px),linear-gradient(180deg,#8A5530,#5E3519);border:3px solid #3E220E;box-shadow:inset 0 3px 0 rgba(255,255,255,.25),0 8px 0 #3E220E,0 16px 26px rgba(0,0,0,.3)}
+.bb-grid{background:#2C1A0C;border-radius:10px;padding:4px;box-shadow:inset 0 3px 8px rgba(0,0,0,.6)}
+.bb-c{background:linear-gradient(180deg,#4A2E17,#3C2411);box-shadow:inset 0 2px 3px rgba(0,0,0,.45),inset 0 -1px 0 rgba(255,255,255,.06)}
+.bb-c.f,.bb-pc i,.bb-ghost i{background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.75),transparent 35%),linear-gradient(180deg,color-mix(in srgb,var(--c) 65%,#fff),var(--c) 60%,color-mix(in srgb,var(--c) 75%,#000));box-shadow:inset 0 -4px 0 rgba(0,0,0,.28),inset 0 3px 0 rgba(255,255,255,.55),0 2px 3px rgba(0,0,0,.4)}
+.bb-sc,.bb-slot{background:linear-gradient(180deg,var(--card),var(--card2));border:3px solid var(--rim);box-shadow:inset 0 2px 0 #fff,0 5px 0 var(--rim-d)}
+/* ---------- مملكة الحلويات: إطار حلوى وخانات ناعمة ---------- */
+.cc-bwrap{padding:10px;background:repeating-linear-gradient(135deg,#FF8FB8 0 14px,#fff 14px 28px);border:3px solid #B8336A;box-shadow:0 8px 0 #8E1149,0 16px 26px rgba(0,0,0,.25)}
+.cc-board{border-radius:12px;box-shadow:0 0 0 4px #7A2A55,inset 0 0 0 2px #fff}
+.cc-t{background:rgba(255,248,252,.93);box-shadow:inset 0 0 0 1px rgba(184,51,106,.12)}
+.cc-t.alt{background:rgba(255,226,240,.95)}
+.cc-c svg{filter:drop-shadow(0 2px 1.5px rgba(80,0,40,.35))}
+.cc-box{background:linear-gradient(180deg,var(--card),var(--card2));border:3px solid var(--rim);box-shadow:inset 0 2px 0 #fff,0 5px 0 var(--rim-d)}
+.cc-sbar{border:2px solid #fff;box-shadow:inset 0 2px 4px rgba(0,0,0,.15),0 2px 0 rgba(0,0,0,.08)}
+.cc-mtop{border:3px solid #8E1149}
+.cc-node{border-width:4px}
+/* أزرار التحكم في القفز والعربيات */
+.steer{border:3px solid rgba(0,0,0,.35);text-shadow:0 2px 0 rgba(0,0,0,.3)}
