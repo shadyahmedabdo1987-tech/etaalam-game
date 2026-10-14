@@ -1,0 +1,28 @@
+
+/* ---------- الشطرنج ---------- */
+#sChess{align-items:center}
+.ch-top{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;max-width:440px;margin:0 auto 6px}
+.ch-lvl{background:linear-gradient(180deg,var(--hero-l,#7C6AF2),var(--hero,#5B47E0));color:#fff;font-weight:800;border-radius:999px;padding:5px 14px;box-shadow:0 4px 0 var(--hero-d,#3A2BA6)}
+.ch-st{font-weight:800;color:var(--ink);font-size:1.05rem}
+.ch-wrap{width:100%;max-width:440px;margin:0 auto;padding:8px;border-radius:20px;background:linear-gradient(180deg,#9B6B43,#6E4526);box-shadow:0 8px 0 #4E2F18,0 14px 24px rgba(0,0,0,.2)}
+.ch-board{display:grid;grid-template-columns:repeat(8,1fr);aspect-ratio:1;border-radius:10px;overflow:hidden;direction:ltr}
+.ch-board .sq{position:relative;display:grid;place-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ch-board .sq.l{background:#F3E2C3}.ch-board .sq.d{background:#B98B5E}
+.ch-board .sq.last.l{background:#F6EB8C}.ch-board .sq.last.d{background:#D9C254}
+.ch-board .sq.sel{background:#8FD18A!important}
+.ch-board .sq.hint{box-shadow:inset 0 0 0 4px #2F8FE6;animation:chHint .8s ease-in-out infinite}
+@keyframes chHint{50%{box-shadow:inset 0 0 0 7px rgba(47,143,230,.5)}}
+.ch-board .sq.chk{background:radial-gradient(circle,#FF6B6B 20%,#E0423E 60%,transparent 90%)!important}
+.ch-board .sq.mv::after{content:"";width:30%;height:30%;border-radius:50%;background:rgba(40,120,40,.45)}
+.ch-board .sq.cap::after{content:"";position:absolute;inset:6%;border-radius:50%;border:4px solid rgba(40,120,40,.5)}
+.ch-board .pc{font-size:clamp(1.7rem,9vw,2.7rem);line-height:1;z-index:1;font-family:"Segoe UI Symbol","Noto Sans Symbols 2","DejaVu Sans",serif;user-select:none}
+.ch-board .pc.w{color:#fff;text-shadow:0 0 1px #3a2a18,0 0 1px #3a2a18,1px 1px 0 #3a2a18,-1px -1px 0 #3a2a18,1px -1px 0 #3a2a18,-1px 1px 0 #3a2a18,0 3px 3px rgba(0,0,0,.35)}
+.ch-board .pc.b{color:#2A1C10;text-shadow:0 1px 0 rgba(255,255,255,.35),0 3px 3px rgba(0,0,0,.3)}
+.ch-board .pc.moved{animation:popIn .3s ease-out}
+.ch-board .rk,.ch-board .fl{position:absolute;font-style:normal;font-size:.6rem;font-weight:800;opacity:.55;color:#4E2F18}
+.ch-board .rk{top:2px;left:3px}.ch-board .fl{bottom:1px;right:3px}
+.ch-caps{min-height:28px;width:100%;max-width:440px;margin:4px auto;display:flex;flex-wrap:wrap;gap:2px;font-size:1.4rem;direction:ltr}
+.ch-caps .w{color:#fff;text-shadow:0 0 2px #3a2a18,0 0 1px #3a2a18}.ch-caps .b{color:#2A1C10}
+.ch-btns{justify-content:center;flex-wrap:wrap;gap:8px;margin-top:10px}
+.ch-note{text-align:center;color:var(--muted);font-weight:700;font-size:.9rem;margin:10px 0 0}
+.ch-btns{display:flex!important;max-width:440px}.ch-btns .btn2{font-size:1rem;padding:10px 12px}

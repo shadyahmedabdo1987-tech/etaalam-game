@@ -1,0 +1,8 @@
+build/
+*.jks
+*.keystore
+keystore-password.txt
+*.apk
+*.aab
+*.mp4
+*.wav

@@ -1,0 +1,54 @@
+
+/* ---------- رحلة الذكاء ---------- */
+.iqmap{position:relative;width:100%;border-radius:28px;overflow:hidden;box-shadow:0 8px 22px rgba(52,36,170,.14);background:#F2FBEF}
+.iqzone{position:absolute;left:0;right:0;border-top:3px dashed rgba(255,255,255,.8)}
+.iqzone .zlab{position:absolute;top:10px;right:12px;background:rgba(255,255,255,.88);border-radius:999px;padding:3px 12px;font-weight:800;font-size:.9rem;color:var(--ink);box-shadow:0 3px 0 rgba(0,0,0,.06)}
+.iqzone .zdeco{position:absolute;font-size:2.6rem;opacity:.35;filter:saturate(.8)}
+.iqzone .z1{left:6%;top:38%}.iqzone .z2{right:8%;top:72%}
+.iqroad{position:absolute;inset:0;width:100%;pointer-events:none}
+.iqroad path{fill:none;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.iqroad .r1{stroke:rgba(90,60,30,.25);stroke-width:34px;transform:translateY(5px)}
+.iqroad .r2{stroke:#E9C88F;stroke-width:28px}
+.iqroad .r3{stroke:#fff;stroke-width:3px;stroke-dasharray:10 12;opacity:.9}
+.iqnode{position:absolute;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:1.4rem;color:#fff;
+ background:radial-gradient(circle at 35% 30%,#9C8CFF,#5B47E0 70%);box-shadow:0 6px 0 #3A2BA6,0 10px 16px rgba(0,0,0,.2),inset 0 2px 0 rgba(255,255,255,.4);z-index:2;transition:transform .15s}
+.iqnode:active{transform:scale(.92)}
+.iqnode.done{background:radial-gradient(circle at 35% 30%,#7CE3A0,#22B573 70%);box-shadow:0 6px 0 #148A55,0 10px 16px rgba(0,0,0,.18),inset 0 2px 0 rgba(255,255,255,.4)}
+.iqnode.lock{background:radial-gradient(circle at 35% 30%,#E4E1F2,#B9B3D6 70%);box-shadow:0 5px 0 #948CB8;color:#6B6396;font-size:1.1rem}
+.iqnode.cur{background:radial-gradient(circle at 35% 30%,#FFE58A,#F2AE10 70%);box-shadow:0 6px 0 #B47E00,0 0 0 8px rgba(255,214,102,.45),0 12px 22px rgba(0,0,0,.2);color:#5A3A00;animation:nodePulse 1.4s ease-in-out infinite}
+.iqnode.boss{width:74px;height:74px;margin:-37px 0 0 -37px}
+.iqnode .ns{position:absolute;bottom:-16px;font-size:.85rem;color:#F2AE10;letter-spacing:-1px;text-shadow:0 1px 0 #fff,0 0 3px #fff}
+.iqnode .gift{position:absolute;top:-14px;right:-8px;font-size:1.4rem;animation:stBob 2s ease-in-out infinite}
+.iqnode.shake{animation:shake .4s}
+@keyframes nodePulse{50%{box-shadow:0 6px 0 #B47E00,0 0 0 16px rgba(255,214,102,.15),0 12px 22px rgba(0,0,0,.2)}}
+.iqav{position:absolute;width:58px;height:58px;margin-left:-29px;z-index:3;filter:drop-shadow(0 6px 4px rgba(0,0,0,.25));animation:stBob 2.4s ease-in-out infinite}
+.iqav svg{width:100%;height:100%}
+.iqav.walk{animation:avWalk .25s ease-in-out infinite}
+@keyframes avWalk{50%{transform:translateY(-8px) rotate(-6deg)}}
+.iqage,.iqdone{position:fixed;inset:0;z-index:60;display:grid;place-items:center;background:rgba(30,20,80,.55);backdrop-filter:blur(3px);padding:16px}
+.iqage .card,.iqdone .card{width:min(420px,100%);background:#fff;border-radius:30px;padding:20px;text-align:center;box-shadow:0 12px 0 rgba(0,0,0,.08);animation:popIn .45s cubic-bezier(.2,1.5,.4,1)}
+.iqage .t{font-size:1.5rem;font-weight:800;margin:0 0 14px;color:var(--ink)}
+.iqage .ages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.iqage .ages button{border-radius:18px;padding:10px 0;font-size:1.6rem;font-weight:800;color:#fff;background:linear-gradient(180deg,var(--hero-l,#7C6AF2),var(--hero,#5B47E0));box-shadow:0 5px 0 var(--hero-d,#3A2BA6);display:flex;flex-direction:column;align-items:center}
+.iqage .ages small{font-size:1.1rem}
+.iqdone .k{margin:0;font-weight:800;color:var(--muted)}
+.iqdone .stars3{display:flex;justify-content:center;gap:6px;margin:6px 0}
+.iqdone .stars3 span{font-size:3.6rem;color:#DDD8EE;transform:scale(.3);animation:starIn .5s cubic-bezier(.2,1.6,.4,1) forwards}
+.iqdone .stars3 span.on{color:#FFC21A;text-shadow:0 4px 0 #C98A00}
+@keyframes starIn{to{transform:scale(1)}}
+@keyframes popIn{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+.iqdone .m{font-size:1.4rem;font-weight:800;margin:4px 0 14px;color:var(--ink)}
+.iqdone .go{width:100%;border-radius:22px;padding:14px;font-size:1.3rem;font-weight:800;color:#fff;background:linear-gradient(180deg,#3FD08A,#22B573);box-shadow:0 6px 0 #148A55}
+.qn{display:inline-grid;place-items:center;min-width:1.6em;padding:0 .25em;font-size:clamp(1.6rem,7vw,2.4rem);font-weight:800;color:var(--ink);font-family:inherit}
+.iq-stage.numq{flex-direction:column;gap:8px}
+.iq-stage .qa{font-style:normal;color:#B9B3D6;font-weight:800;font-size:1.2rem;margin:0 2px}
+.iq-stage .qeq{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;direction:ltr}
+.iq-stage .qop{font-size:1.8rem;color:var(--hero,#5B47E0)}
+.iq-stage .qs{font-size:2rem}
+.iq-stage .qw{font-size:1.6rem;color:var(--ink)}
+.iq-stage .qan{display:flex;align-items:center;gap:8px;font-size:2.4rem;direction:ltr}
+.qcount{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;font-size:2rem;max-width:300px}
+.qcount.sm{font-size:1.5rem;max-width:130px}
+.qcount .gone{opacity:.25;text-decoration:line-through}
+.iq-opts.nums .opt .qn{font-size:clamp(1.8rem,9vw,2.8rem)}
+.iq-stage .qm{display:inline-grid;place-items:center}
